@@ -1,4 +1,4 @@
-﻿namespace PBDT_2D
+﻿namespace TBDT_2D
 {
     partial class Form1
     {

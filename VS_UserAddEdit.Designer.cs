@@ -208,6 +208,7 @@
             btnOK.TextAlign = ContentAlignment.MiddleRight;
             btnOK.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnOK.UseVisualStyleBackColor = true;
+            btnOK.Click += btnOK_Click;
             // 
             // btnCancel
             // 
@@ -223,6 +224,7 @@
             btnCancel.TextAlign = ContentAlignment.MiddleRight;
             btnCancel.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // VS_UserAddEdit
             // 

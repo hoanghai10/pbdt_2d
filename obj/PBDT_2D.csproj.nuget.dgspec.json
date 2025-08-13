@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\TecApro\\source\\repos\\PBDT_2D\\PBDT_2D.csproj": {}
+    "D:\\PBDT_2D\\PBDT_2D.csproj": {}
   },
   "projects": {
-    "C:\\Users\\TecApro\\source\\repos\\PBDT_2D\\PBDT_2D.csproj": {
+    "D:\\PBDT_2D\\PBDT_2D.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TecApro\\source\\repos\\PBDT_2D\\PBDT_2D.csproj",
+        "projectUniqueName": "D:\\PBDT_2D\\PBDT_2D.csproj",
         "projectName": "PBDT_2D",
-        "projectPath": "C:\\Users\\TecApro\\source\\repos\\PBDT_2D\\PBDT_2D.csproj",
+        "projectPath": "D:\\PBDT_2D\\PBDT_2D.csproj",
         "packagesPath": "C:\\Users\\TecApro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TecApro\\source\\repos\\PBDT_2D\\obj\\",
+        "outputPath": "D:\\PBDT_2D\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -49,6 +49,16 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[6.0.2, )"
+            },
+            "Microsoft.Office.Interop.Excel": {
+              "target": "Package",
+              "version": "[15.0.4795.1001, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

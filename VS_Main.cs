@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
-namespace TBDT.Forms
+namespace TBDT_2D.Forms
 {
     public partial class VS_Main : Form
     {

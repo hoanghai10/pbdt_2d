@@ -1,4 +1,4 @@
-﻿namespace TBDT.Forms
+﻿namespace TBDT_2D.Forms
 {
     partial class VS_Main
     {

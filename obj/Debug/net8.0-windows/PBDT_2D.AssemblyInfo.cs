@@ -11,13 +11,8 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("PBDT_2D")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("PBDT_2D")]
-[assembly: System.Reflection.AssemblyTitleAttribute("PBDT_2D")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2d605449b31963332fde92fc1efd923d3f4cf874")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]
 

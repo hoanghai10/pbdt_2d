@@ -1,6 +1,6 @@
-using TBDT.Forms;
+using TBDT_2D.Forms;
 
-namespace PBDT_2D
+namespace TBDT_2D
 {
     public partial class Form1 : Form
     {
