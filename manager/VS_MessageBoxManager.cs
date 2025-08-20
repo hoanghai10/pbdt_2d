@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace TBDT_2D.Manager
+namespace PBDT_2D.Manager
 {
     public class VS_MessageBoxManager
     {

@@ -1,6 +1,6 @@
-﻿namespace TBDT_2D
+﻿namespace PBDT_2D
 {
-    partial class Form1
+    partial class VS_MainManager
     {
         /// <summary>
         ///  Required designer variable.
@@ -50,7 +50,7 @@
             btnHuanLuyen.Text = "Huấn luyện";
             btnHuanLuyen.TextColor = Color.White;
             btnHuanLuyen.UseVisualStyleBackColor = false;
-            btnHuanLuyen.Click += this.btnHuanLuyen_Click;
+            btnHuanLuyen.Click += btnHuanLuyen_Click;
             // 
             // btnUser
             // 
@@ -70,17 +70,17 @@
             btnUser.Text = "Người dùng";
             btnUser.TextColor = Color.White;
             btnUser.UseVisualStyleBackColor = false;
-            btnUser.Click += this.btnUser_Click;
+            btnUser.Click += btnUser_Click;
             // 
-            // Form1
+            // VS_MainManager
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(605, 304);
             Controls.Add(btnUser);
             Controls.Add(btnHuanLuyen);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "VS_MainManager";
+            Text = "Chức năng ";
             ResumeLayout(false);
         }
 

@@ -6,9 +6,9 @@ using System.Net.Sockets;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
-using TBDT_2D.Forms;
+using PBDT_2D.Forms;
 
-namespace TBDT_2D.Manager
+namespace PBDT_2D.Manager
 {
     public class VS_NetworkManager
     {

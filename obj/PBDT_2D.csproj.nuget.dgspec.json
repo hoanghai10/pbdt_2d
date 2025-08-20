@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PBDT_2D\\PBDT_2D.csproj": {}
+    "C:\\Users\\TecApro\\Documents\\TestGirdView\\pbdt_2d\\PBDT_2D.csproj": {}
   },
   "projects": {
-    "D:\\PBDT_2D\\PBDT_2D.csproj": {
+    "C:\\Users\\TecApro\\Documents\\TestGirdView\\pbdt_2d\\PBDT_2D.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PBDT_2D\\PBDT_2D.csproj",
+        "projectUniqueName": "C:\\Users\\TecApro\\Documents\\TestGirdView\\pbdt_2d\\PBDT_2D.csproj",
         "projectName": "PBDT_2D",
-        "projectPath": "D:\\PBDT_2D\\PBDT_2D.csproj",
+        "projectPath": "C:\\Users\\TecApro\\Documents\\TestGirdView\\pbdt_2d\\PBDT_2D.csproj",
         "packagesPath": "C:\\Users\\TecApro\\.nuget\\packages\\",
-        "outputPath": "D:\\PBDT_2D\\obj\\",
+        "outputPath": "C:\\Users\\TecApro\\Documents\\TestGirdView\\pbdt_2d\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

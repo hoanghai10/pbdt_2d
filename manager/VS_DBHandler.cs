@@ -7,7 +7,7 @@ using Microsoft.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace TBDT_2D.Manager
+namespace PBDT_2D.Manager
 {
     public class VS_DBHandler
     {

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TBDT_2D {
+namespace PBDT_2D {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace TBDT_2D {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TBDT_2D.MyResource", typeof(MyResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PBDT_2D.MyResource", typeof(MyResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

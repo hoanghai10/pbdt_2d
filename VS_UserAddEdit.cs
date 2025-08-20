@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using TBDT_2D.Manager;
+using PBDT_2D.Manager;
 
-namespace TBDT_2D.Forms
+namespace PBDT_2D.Forms
 {
     public partial class VS_UserAddEdit : Form
     {
@@ -53,6 +53,7 @@ namespace TBDT_2D.Forms
             tbChucVu.Text = data.ChucVu;
             tbDonVi.Text = data.DonVi;
             tbGhiChu.Text = data.GhiChu;
+            tbNamsinh.Text = data.NamSinh.ToString();
         }
 
         void CloseForm()
@@ -75,6 +76,11 @@ namespace TBDT_2D.Forms
                 MessageBox.Show("Chưa nhập quân hàm!");
                 return;
             }
+            if (string.IsNullOrWhiteSpace(tbNamsinh.Text) || !int.TryParse(tbNamsinh.Text.Trim(), out int namSinh))
+            {
+                MessageBox.Show("Năm sinh không hợp lệ!");
+                return;
+            }
 
             //Update data to DB
             currentEditUserData.Ten = tbTen.Text.Trim();
@@ -82,6 +88,7 @@ namespace TBDT_2D.Forms
             currentEditUserData.ChucVu = tbChucVu.Text.Trim();
             currentEditUserData.DonVi = tbDonVi.Text.Trim();
             currentEditUserData.GhiChu = tbGhiChu.Text.Trim();
+            currentEditUserData.NamSinh = namSinh;
 
             if (VS_DBManager.AddEditUser(currentEditUserData))
                 CloseForm();

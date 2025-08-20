@@ -1,26 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\PBDT_2D\\",
+  "WorkspaceRootPath": "C:\\Users\\TecApro\\Documents\\TestGirdView\\pbdt_2d\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7EBCD92C-4117-4D7E-B547-E171CA5B1762}|PBDT_2D.csproj|D:\\PBDT_2D\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7EBCD92C-4117-4D7E-B547-E171CA5B1762}|PBDT_2D.csproj|solutionrelative:form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{7EBCD92C-4117-4D7E-B547-E171CA5B1762}|PBDT_2D.csproj|c:\\users\\tecapro\\documents\\testgirdview\\pbdt_2d\\manager\\vs_classes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EBCD92C-4117-4D7E-B547-E171CA5B1762}|PBDT_2D.csproj|solutionrelative:manager\\vs_classes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7EBCD92C-4117-4D7E-B547-E171CA5B1762}|PBDT_2D.csproj|d:\\pbdt_2d\\vs_useraddedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7EBCD92C-4117-4D7E-B547-E171CA5B1762}|PBDT_2D.csproj|solutionrelative:vs_useraddedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7EBCD92C-4117-4D7E-B547-E171CA5B1762}|PBDT_2D.csproj|c:\\users\\tecapro\\documents\\testgirdview\\pbdt_2d\\vs_danhsachphutrach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EBCD92C-4117-4D7E-B547-E171CA5B1762}|PBDT_2D.csproj|solutionrelative:vs_danhsachphutrach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7EBCD92C-4117-4D7E-B547-E171CA5B1762}|PBDT_2D.csproj|d:\\pbdt_2d\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7EBCD92C-4117-4D7E-B547-E171CA5B1762}|PBDT_2D.csproj|solutionrelative:form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7EBCD92C-4117-4D7E-B547-E171CA5B1762}|PBDT_2D.csproj|C:\\Users\\TecApro\\Documents\\TestGirdView\\pbdt_2d\\vs_danhsachphutrach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7EBCD92C-4117-4D7E-B547-E171CA5B1762}|PBDT_2D.csproj|solutionrelative:vs_danhsachphutrach.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7EBCD92C-4117-4D7E-B547-E171CA5B1762}|PBDT_2D.csproj|d:\\pbdt_2d\\manager\\vs_dbmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7EBCD92C-4117-4D7E-B547-E171CA5B1762}|PBDT_2D.csproj|solutionrelative:manager\\vs_dbmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7EBCD92C-4117-4D7E-B547-E171CA5B1762}|PBDT_2D.csproj|c:\\users\\tecapro\\documents\\testgirdview\\pbdt_2d\\properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}",
+      "RelativeMoniker": "D:0:0:{7EBCD92C-4117-4D7E-B547-E171CA5B1762}|PBDT_2D.csproj|solutionrelative:properties\\settings.settings||{6D2695F9-5365-4A78-89ED-F205C045BFE6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7EBCD92C-4117-4D7E-B547-E171CA5B1762}|PBDT_2D.csproj|D:\\PBDT_2D\\vs_useraddedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7EBCD92C-4117-4D7E-B547-E171CA5B1762}|PBDT_2D.csproj|solutionrelative:vs_useraddedit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{7EBCD92C-4117-4D7E-B547-E171CA5B1762}|PBDT_2D.csproj|c:\\users\\tecapro\\documents\\testgirdview\\pbdt_2d\\pbdt_2d.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{7EBCD92C-4117-4D7E-B547-E171CA5B1762}|PBDT_2D.csproj|solutionrelative:pbdt_2d.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,69 +29,77 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "DockedWidth": 290,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "VS_DBManager.cs",
-              "DocumentMoniker": "D:\\PBDT_2D\\manager\\VS_DBManager.cs",
-              "RelativeDocumentMoniker": "manager\\VS_DBManager.cs",
-              "ToolTip": "D:\\PBDT_2D\\manager\\VS_DBManager.cs",
-              "RelativeToolTip": "manager\\VS_DBManager.cs",
-              "ViewState": "AgIAALcBAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T08:09:18.398Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "VS_UserAddEdit.cs [Design]",
-              "DocumentMoniker": "D:\\PBDT_2D\\VS_UserAddEdit.cs",
-              "RelativeDocumentMoniker": "VS_UserAddEdit.cs",
-              "ToolTip": "D:\\PBDT_2D\\VS_UserAddEdit.cs [Design]*",
-              "RelativeToolTip": "VS_UserAddEdit.cs [Design]*",
+              "DocumentIndex": 0,
+              "Title": "VS_Classes.cs",
+              "DocumentMoniker": "C:\\Users\\TecApro\\Documents\\TestGirdView\\pbdt_2d\\manager\\VS_Classes.cs",
+              "RelativeDocumentMoniker": "manager\\VS_Classes.cs",
+              "ToolTip": "C:\\Users\\TecApro\\Documents\\TestGirdView\\pbdt_2d\\manager\\VS_Classes.cs",
+              "RelativeToolTip": "manager\\VS_Classes.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAwwCEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T07:47:24.341Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form2.cs",
-              "DocumentMoniker": "D:\\PBDT_2D\\Form2.cs",
-              "RelativeDocumentMoniker": "Form2.cs",
-              "ToolTip": "D:\\PBDT_2D\\Form2.cs",
-              "RelativeToolTip": "Form2.cs",
-              "ViewState": "AgIAAKAAAAAAAAAAAAAmwK4AAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-12T07:40:40.262Z",
+              "WhenOpened": "2025-08-20T07:56:24.032Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "VS_UserAddEdit.cs",
-              "DocumentMoniker": "D:\\PBDT_2D\\VS_UserAddEdit.cs",
-              "RelativeDocumentMoniker": "VS_UserAddEdit.cs",
-              "ToolTip": "D:\\PBDT_2D\\VS_UserAddEdit.cs*",
-              "RelativeToolTip": "VS_UserAddEdit.cs*",
-              "ViewState": "AgIAADYAAAAAAAAAAAAwwA0AAAAFAAAAAAAAAA==",
+              "Title": "VS_DanhSachPhuTrach.cs",
+              "DocumentMoniker": "C:\\Users\\TecApro\\Documents\\TestGirdView\\pbdt_2d\\VS_DanhSachPhuTrach.cs",
+              "RelativeDocumentMoniker": "VS_DanhSachPhuTrach.cs",
+              "ToolTip": "C:\\Users\\TecApro\\Documents\\TestGirdView\\pbdt_2d\\VS_DanhSachPhuTrach.cs",
+              "RelativeToolTip": "VS_DanhSachPhuTrach.cs",
+              "ViewState": "AgIAAEMBAAAAAAAAAAAAAEMBAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T09:59:57.291Z",
+              "WhenOpened": "2025-08-20T07:20:57.982Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form2.cs [Design]",
-              "DocumentMoniker": "D:\\PBDT_2D\\Form2.cs",
-              "RelativeDocumentMoniker": "Form2.cs",
-              "ToolTip": "D:\\PBDT_2D\\Form2.cs [Design]",
-              "RelativeToolTip": "Form2.cs [Design]",
+              "DocumentIndex": 3,
+              "Title": "Settings.settings",
+              "DocumentMoniker": "C:\\Users\\TecApro\\Documents\\TestGirdView\\pbdt_2d\\Properties\\Settings.settings",
+              "RelativeDocumentMoniker": "Properties\\Settings.settings",
+              "ToolTip": "C:\\Users\\TecApro\\Documents\\TestGirdView\\pbdt_2d\\Properties\\Settings.settings",
+              "RelativeToolTip": "Properties\\Settings.settings",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002767|",
+              "WhenOpened": "2025-08-20T06:49:12.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PBDT_2D",
+              "DocumentMoniker": "C:\\Users\\TecApro\\Documents\\TestGirdView\\pbdt_2d\\PBDT_2D.csproj",
+              "RelativeDocumentMoniker": "PBDT_2D.csproj",
+              "ToolTip": "C:\\Users\\TecApro\\Documents\\TestGirdView\\pbdt_2d\\PBDT_2D.csproj",
+              "RelativeToolTip": "PBDT_2D.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-20T06:48:58.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "VS_DanhSachPhuTrach.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\TecApro\\Documents\\TestGirdView\\pbdt_2d\\VS_DanhSachPhuTrach.cs",
+              "RelativeDocumentMoniker": "VS_DanhSachPhuTrach.cs",
+              "ToolTip": "C:\\Users\\TecApro\\Documents\\TestGirdView\\pbdt_2d\\VS_DanhSachPhuTrach.cs [Design]",
+              "RelativeToolTip": "VS_DanhSachPhuTrach.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T09:27:27.575Z",
+              "WhenOpened": "2025-08-18T03:40:03.309Z",
               "EditorCaption": " [Design]"
             }
           ]
