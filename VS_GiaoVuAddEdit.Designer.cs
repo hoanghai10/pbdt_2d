@@ -1,4 +1,4 @@
-﻿namespace TBDT_2D.Forms
+﻿namespace PBDT_2D.Forms
 {
     partial class VS_GiaoVuAddEdit
     {
@@ -146,6 +146,7 @@
             btnCancel.TextAlign = ContentAlignment.MiddleRight;
             btnCancel.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnOK
             // 
@@ -161,6 +162,7 @@
             btnOK.TextAlign = ContentAlignment.MiddleRight;
             btnOK.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnOK.UseVisualStyleBackColor = true;
+            btnOK.Click += btnOK_Click;
             // 
             // cboQuanHam
             // 

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TBA2D.Properties {
+namespace PBDT_2D.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -20,6 +20,30 @@ namespace TBA2D.Properties {
         public static Settings Default {
             get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LastShootingSession_HV {
+            get {
+                return ((string)(this["LastShootingSession_HV"]));
+            }
+            set {
+                this["LastShootingSession_HV"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LastShootingSession_GV {
+            get {
+                return ((string)(this["LastShootingSession_GV"]));
+            }
+            set {
+                this["LastShootingSession_GV"] = value;
             }
         }
     }

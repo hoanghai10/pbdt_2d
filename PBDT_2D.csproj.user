@@ -4,7 +4,16 @@
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form2.cs">
+    <Compile Update="UserControls\VS_DieuKienBB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserControls\VS_DieuKienBia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="VS_DanhSachPhuTrach.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="VS_UserAddEdit.cs">

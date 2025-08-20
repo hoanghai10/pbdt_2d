@@ -7,8 +7,9 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
-namespace TBDT_2D.Manager
+namespace PBDT_2D.Manager
 {
     public class VS_DBManager
     {
@@ -258,12 +259,13 @@ namespace TBDT_2D.Manager
         }
 
 
-        public static List<VS_User> LoadAllUsers(string filterTen, int filterQH, string filterChucVu, string filterDonVi, string filterGhiChu)
+        public static List<VS_User> LoadAllUsers(string filterTen, int filterQH, string filterChucVu, string filterDonVi, string filterGhiChu, int? filterNamSinh)
         {
             var result = new List<VS_User>();
 
             try
             {
+                Debug.WriteLine(">>> Vào hàm LoadAllUsers");
                 using (SqlConnection conn = new SqlConnection(VS_Database.dbConnection))
                 {
                     conn.Open();
@@ -276,6 +278,7 @@ namespace TBDT_2D.Manager
                         cmd.Parameters.AddWithValue("@ChucVu", string.IsNullOrEmpty(filterChucVu) ? (object)DBNull.Value : filterChucVu);
                         cmd.Parameters.AddWithValue("@DonVi", string.IsNullOrEmpty(filterDonVi) ? (object)DBNull.Value : filterDonVi);
                         cmd.Parameters.AddWithValue("@GhiChu", string.IsNullOrEmpty(filterGhiChu) ? (object)DBNull.Value : filterGhiChu);
+                        cmd.Parameters.AddWithValue("@NamSinh", filterNamSinh.HasValue ? (object)filterNamSinh.Value : DBNull.Value);
 
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
@@ -292,8 +295,10 @@ namespace TBDT_2D.Manager
                                     QuanHam = reader.IsDBNull(3) ? "" : reader.GetString(3),
                                     ChucVu = reader.IsDBNull(4) ? "" : reader.GetString(4),
                                     DonVi = reader.IsDBNull(5) ? "" : reader.GetString(5),
-                                    GhiChu = reader.IsDBNull(6) ? "" : reader.GetString(6)
+                                    GhiChu = reader.IsDBNull(6) ? "" : reader.GetString(6),
+                                    NamSinh = reader.IsDBNull(7) ? 0 : reader.GetInt32(7),
                                 };
+                                Debug.WriteLine($"[HocVien] STT: {s.ThuTu}, Id: {s.Id} QHId: {s.QuanHamId}, HoTen: {s.Ten}, NamSinh: {s.NamSinh}, QuanHam: {s.QuanHam}");
                                 result.Add(s);
                             }
                         }
@@ -302,6 +307,7 @@ namespace TBDT_2D.Manager
             }
             catch (Exception ex)
             {
+                Debug.WriteLine("[ERROR] LoadAllUsers - " + ex.ToString());
                 MessageBox.Show("Lỗi truy xuất dữ liệu người dùng!\n" + ex.Message);
             }
 
@@ -326,7 +332,7 @@ namespace TBDT_2D.Manager
                         cmd.Parameters.AddWithValue("@ChucVu", userData.ChucVu ?? "");
                         cmd.Parameters.AddWithValue("@DonVi", userData.DonVi ?? "");
                         cmd.Parameters.AddWithValue("@GhiChu", userData.GhiChu ?? "");
-
+                        cmd.Parameters.AddWithValue("@NamSinh", userData.NamSinh);
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -373,7 +379,6 @@ namespace TBDT_2D.Manager
 
             try
             {
-                Debug.WriteLine(">>> Vào hàm LoadAllGiaoVu");
 
                 using (SqlConnection conn = new SqlConnection(VS_Database.dbConnection))
                 {
@@ -399,10 +404,9 @@ namespace TBDT_2D.Manager
                                     ThuTu = stt,
                                     QuanHamId = reader.GetInt32(3),
                                     HoTen = reader.GetString(1),
-                                    NamSinh = reader.GetInt32(2),
+                                    NamSinh = reader.IsDBNull(2) ? 0 : reader.GetInt32(2),
                                     QuanHam = reader.GetString(4),
                                 };
-                                Debug.WriteLine($"[GiaoVu] STT: {s.ThuTu}, Id: {s.Id} QHId: {s.QuanHamId}, HoTen: {s.HoTen}, NamSinh: {s.NamSinh}, QuanHam: {s.QuanHam}");
                                 result.Add(s);
                             }
                         }

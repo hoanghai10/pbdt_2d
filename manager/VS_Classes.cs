@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Runtime.InteropServices;
 
-namespace TBDT_2D.Manager
+namespace PBDT_2D.Manager
 {
     //COMMON
 
@@ -231,6 +231,8 @@ namespace TBDT_2D.Manager
         public string ChucVu { get; set; }
         public string DonVi { get; set; }
         public string GhiChu { get; set; }
+        public int? NamSinh { get; set; }
+
 
         public VS_User()
         {
@@ -242,6 +244,7 @@ namespace TBDT_2D.Manager
             ChucVu = string.Empty;
             DonVi = string.Empty;
             GhiChu = string.Empty;
+            NamSinh = null;
         }
     }
     [Serializable]
@@ -251,7 +254,7 @@ namespace TBDT_2D.Manager
         public int ThuTu { get; set; }
         public int QuanHamId { get; set; }
         public string HoTen { get; set; }
-        public int NamSinh { get; set; }
+        public int? NamSinh { get; set; }
         public string QuanHam { get; set; }
 
         public VS_GiaoVu()
@@ -260,7 +263,7 @@ namespace TBDT_2D.Manager
             ThuTu = 0;
             QuanHamId = 0;
             HoTen = string.Empty;
-            NamSinh = 0;
+            NamSinh = null;
             QuanHam = string.Empty;
         }
     }

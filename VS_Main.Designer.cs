@@ -1,4 +1,4 @@
-﻿namespace TBDT_2D.Forms
+﻿namespace PBDT_2D.Forms
 {
     partial class VS_Main
     {
@@ -67,7 +67,6 @@
             leftBot_lblConnect = new Label();
             leftBot_gbOtherFunctions = new GroupBox();
             leftBot_layoutOtherFunctions = new TableLayoutPanel();
-            leftbot_btngv = new Button();
             leftBot_btnUser = new Button();
             leftBot_btnCrewSetup = new Button();
             leftBot_btnSearch = new Button();
@@ -462,47 +461,34 @@
             // 
             leftBot_layoutOtherFunctions.ColumnCount = 1;
             leftBot_layoutOtherFunctions.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            leftBot_layoutOtherFunctions.Controls.Add(leftbot_btngv, 0, 0);
-            leftBot_layoutOtherFunctions.Controls.Add(leftBot_btnUser, 0, 1);
-            leftBot_layoutOtherFunctions.Controls.Add(leftBot_btnCrewSetup, 0, 2);
-            leftBot_layoutOtherFunctions.Controls.Add(leftBot_btnSearch, 0, 3);
+            leftBot_layoutOtherFunctions.Controls.Add(leftBot_btnUser, 0, 0);
+            leftBot_layoutOtherFunctions.Controls.Add(leftBot_btnCrewSetup, 0, 1);
+            leftBot_layoutOtherFunctions.Controls.Add(leftBot_btnSearch, 0, 2);
             leftBot_layoutOtherFunctions.Dock = DockStyle.Fill;
             leftBot_layoutOtherFunctions.Location = new Point(4, 19);
             leftBot_layoutOtherFunctions.Margin = new Padding(4, 3, 4, 3);
             leftBot_layoutOtherFunctions.Name = "leftBot_layoutOtherFunctions";
-            leftBot_layoutOtherFunctions.RowCount = 4;
-            leftBot_layoutOtherFunctions.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            leftBot_layoutOtherFunctions.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            leftBot_layoutOtherFunctions.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            leftBot_layoutOtherFunctions.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            leftBot_layoutOtherFunctions.RowCount = 3;
+            leftBot_layoutOtherFunctions.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            leftBot_layoutOtherFunctions.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            leftBot_layoutOtherFunctions.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            leftBot_layoutOtherFunctions.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             leftBot_layoutOtherFunctions.Size = new Size(268, 260);
             leftBot_layoutOtherFunctions.TabIndex = 0;
-            // 
-            // leftbot_btngv
-            // 
-            leftbot_btngv.Dock = DockStyle.Fill;
-            leftbot_btngv.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            leftbot_btngv.Location = new Point(12, 12);
-            leftbot_btngv.Margin = new Padding(12);
-            leftbot_btngv.Name = "leftbot_btngv";
-            leftbot_btngv.Size = new Size(244, 41);
-            leftbot_btngv.TabIndex = 3;
-            leftbot_btngv.Text = "Quản lý giáo vụ";
-            leftbot_btngv.TextImageRelation = TextImageRelation.ImageBeforeText;
-            leftbot_btngv.UseVisualStyleBackColor = true;
             // 
             // leftBot_btnUser
             // 
             leftBot_btnUser.Dock = DockStyle.Fill;
             leftBot_btnUser.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            leftBot_btnUser.Location = new Point(12, 77);
+            leftBot_btnUser.Location = new Point(12, 12);
             leftBot_btnUser.Margin = new Padding(12);
             leftBot_btnUser.Name = "leftBot_btnUser";
-            leftBot_btnUser.Size = new Size(244, 41);
+            leftBot_btnUser.Size = new Size(244, 62);
             leftBot_btnUser.TabIndex = 0;
-            leftBot_btnUser.Text = "Quản lý học viên";
+            leftBot_btnUser.Text = "Danh sách giáo viên";
             leftBot_btnUser.TextImageRelation = TextImageRelation.ImageBeforeText;
             leftBot_btnUser.UseVisualStyleBackColor = true;
+            leftBot_btnUser.Click += leftBot_btnUser_Click;
             // 
             // leftBot_btnCrewSetup
             // 
@@ -510,10 +496,10 @@
             leftBot_btnCrewSetup.Dock = DockStyle.Fill;
             leftBot_btnCrewSetup.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             leftBot_btnCrewSetup.Image = (Image)resources.GetObject("leftBot_btnCrewSetup.Image");
-            leftBot_btnCrewSetup.Location = new Point(12, 142);
+            leftBot_btnCrewSetup.Location = new Point(12, 98);
             leftBot_btnCrewSetup.Margin = new Padding(12);
             leftBot_btnCrewSetup.Name = "leftBot_btnCrewSetup";
-            leftBot_btnCrewSetup.Size = new Size(244, 41);
+            leftBot_btnCrewSetup.Size = new Size(244, 62);
             leftBot_btnCrewSetup.TabIndex = 1;
             leftBot_btnCrewSetup.Text = "Quản lý kíp bắn";
             leftBot_btnCrewSetup.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -524,10 +510,10 @@
             leftBot_btnSearch.Dock = DockStyle.Fill;
             leftBot_btnSearch.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             leftBot_btnSearch.Image = (Image)resources.GetObject("leftBot_btnSearch.Image");
-            leftBot_btnSearch.Location = new Point(12, 207);
+            leftBot_btnSearch.Location = new Point(12, 184);
             leftBot_btnSearch.Margin = new Padding(12);
             leftBot_btnSearch.Name = "leftBot_btnSearch";
-            leftBot_btnSearch.Size = new Size(244, 41);
+            leftBot_btnSearch.Size = new Size(244, 64);
             leftBot_btnSearch.TabIndex = 2;
             leftBot_btnSearch.Text = "Kết quả bắn";
             leftBot_btnSearch.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -838,6 +824,5 @@
         private System.Windows.Forms.Button leftBot_btnUser;
         private System.Windows.Forms.Button leftBot_btnCrewSetup;
         private System.Windows.Forms.Button leftBot_btnSearch;
-        private Button leftbot_btngv;
     }
 }

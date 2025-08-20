@@ -9,7 +9,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.ComponentModel;
 
-namespace TBDT_2D
+namespace PBDT_2D
 {
     public class RJButton : Button
     {

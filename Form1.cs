@@ -1,10 +1,11 @@
-using TBDT_2D.Forms;
+using PBDT_2D;
+using PBDT_2D.Forms;
 
-namespace TBDT_2D
+namespace PBDT_2D
 {
-    public partial class Form1 : Form
+    public partial class VS_MainManager : Form
     {
-        public Form1()
+        public VS_MainManager()
         {
             InitializeComponent();
         }
@@ -15,7 +16,7 @@ namespace TBDT_2D
         }
         private void btnUser_Click(object sender, EventArgs e)
         {
-            var b = new Form2();
+            var b = new UserManager();
             b.ShowDialog();
         }
     }
