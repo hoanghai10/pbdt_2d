@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using PBDT_2D.Manager;
 
-namespace TBA2D.Forms.UserControls
+namespace PBDT_2D.Forms.UserControls
 {
     public partial class VS_DieuKienBB : UserControl
     {
@@ -59,79 +59,79 @@ namespace TBA2D.Forms.UserControls
 
         }
 
-        //public string GetData(ref VS_Baiban dataBBEdited)
-        //{
-        //    try
-        //    {
-        //        //check empty
-        //        bool inputOK_soDan = !string.IsNullOrWhiteSpace(tbSoDan.Text);
-        //        bool inputOK_diem = !string.IsNullOrWhiteSpace(tbDiemGioi.Text) 
-        //                            && !string.IsNullOrWhiteSpace(tbDiemKha.Text) 
-        //                            && !string.IsNullOrWhiteSpace(tbDiemDat.Text);
-        //        bool inputOK_totalHit = !cbCountHit.Checked || (cbCountHit.Checked
-        //                                                        && !string.IsNullOrWhiteSpace(tbCountHit_Gioi.Text)
-        //                                                        && !string.IsNullOrWhiteSpace(tbCountHit_Kha.Text)
-        //                                                        && !string.IsNullOrWhiteSpace(tbCountHit_Dat.Text));
-        //        bool inputOK_firstHit = !cbCountFirstHit.Checked || (cbCountFirstHit.Checked
-        //                                                            && !string.IsNullOrWhiteSpace(tbFirstHit_Gioi.Text)
-        //                                                            && !string.IsNullOrWhiteSpace(tbFirstHit_Kha.Text)
-        //                                                            && !string.IsNullOrWhiteSpace(tbFirstHit_Dat.Text));
+        public string GetData(ref VS_Baiban dataBBEdited)
+        {
+            try
+            {
+                //check empty
+                bool inputOK_soDan = !string.IsNullOrWhiteSpace(tbSoDan.Text);
+                bool inputOK_diem = !string.IsNullOrWhiteSpace(tbDiemGioi.Text)
+                                    && !string.IsNullOrWhiteSpace(tbDiemKha.Text)
+                                    && !string.IsNullOrWhiteSpace(tbDiemDat.Text);
+                bool inputOK_totalHit = !cbCountHit.Checked || (cbCountHit.Checked
+                                                                && !string.IsNullOrWhiteSpace(tbCountHit_Gioi.Text)
+                                                                && !string.IsNullOrWhiteSpace(tbCountHit_Kha.Text)
+                                                                && !string.IsNullOrWhiteSpace(tbCountHit_Dat.Text));
+                bool inputOK_firstHit = !cbCountFirstHit.Checked || (cbCountFirstHit.Checked
+                                                                    && !string.IsNullOrWhiteSpace(tbFirstHit_Gioi.Text)
+                                                                    && !string.IsNullOrWhiteSpace(tbFirstHit_Kha.Text)
+                                                                    && !string.IsNullOrWhiteSpace(tbFirstHit_Dat.Text));
 
-        //        if (!inputOK_soDan || !inputOK_diem || !inputOK_totalHit || !inputOK_firstHit)
-        //            return "Chưa nhập dữ liệu";
+                if (!inputOK_soDan || !inputOK_diem || !inputOK_totalHit || !inputOK_firstHit)
+                    return "Chưa nhập dữ liệu";
 
-        //        //check number
-        //        int numberCheck = 0;
-        //        if (!int.TryParse(tbSoDan.Text, out numberCheck) || numberCheck <= 0) return "SỐ ĐẠN phải là số nguyên > 0";
+                //check number
+                int numberCheck = 0;
+                if (!int.TryParse(tbSoDan.Text, out numberCheck) || numberCheck <= 0) return "SỐ ĐẠN phải là số nguyên > 0";
 
-        //        if (!int.TryParse(tbDiemGioi.Text, out numberCheck) || numberCheck < 0) return "ĐIỂM GIỎI phải là số nguyên >= 0";
-        //        if (!int.TryParse(tbDiemKha.Text, out numberCheck) || numberCheck < 0) return "ĐIỂM KHÁ phải là số nguyên >= 0";
-        //        if (!int.TryParse(tbDiemDat.Text, out numberCheck) || numberCheck < 0) return "ĐIỂM ĐẠT phải là số nguyên >= 0";
+                if (!int.TryParse(tbDiemGioi.Text, out numberCheck) || numberCheck < 0) return "ĐIỂM GIỎI phải là số nguyên >= 0";
+                if (!int.TryParse(tbDiemKha.Text, out numberCheck) || numberCheck < 0) return "ĐIỂM KHÁ phải là số nguyên >= 0";
+                if (!int.TryParse(tbDiemDat.Text, out numberCheck) || numberCheck < 0) return "ĐIỂM ĐẠT phải là số nguyên >= 0";
 
-        //        if (cbCountHit.Checked && 
-        //            (!int.TryParse(tbCountHit_Gioi.Text, out numberCheck) || numberCheck <= 0)) return "SỐ VIÊN trúng mục tiêu điểm GIỎI phải là số nguyên > 0";
-        //        if (cbCountHit.Checked &&
-        //            (!int.TryParse(tbCountHit_Kha.Text, out numberCheck) || numberCheck <= 0)) return "SỐ VIÊN trúng mục tiêu điểm KHÁ phải là số nguyên > 0";
-        //        if (cbCountHit.Checked &&
-        //            (!int.TryParse(tbCountHit_Dat.Text, out numberCheck) || numberCheck <= 0)) return "SỐ VIÊN trúng mục tiêu điểm ĐẠT phải là số nguyên > 0";
+                if (cbCountHit.Checked &&
+                    (!int.TryParse(tbCountHit_Gioi.Text, out numberCheck) || numberCheck <= 0)) return "SỐ VIÊN trúng mục tiêu điểm GIỎI phải là số nguyên > 0";
+                if (cbCountHit.Checked &&
+                    (!int.TryParse(tbCountHit_Kha.Text, out numberCheck) || numberCheck <= 0)) return "SỐ VIÊN trúng mục tiêu điểm KHÁ phải là số nguyên > 0";
+                if (cbCountHit.Checked &&
+                    (!int.TryParse(tbCountHit_Dat.Text, out numberCheck) || numberCheck <= 0)) return "SỐ VIÊN trúng mục tiêu điểm ĐẠT phải là số nguyên > 0";
 
-        //        if (cbCountFirstHit.Checked &&
-        //            (!int.TryParse(tbFirstHit_Gioi.Text, out numberCheck) || numberCheck <= 0)) return "THỨ TỰ viên trúng đầu tiên điểm GIỎI phải là số nguyên > 0";
-        //        if (cbCountFirstHit.Checked &&
-        //            (!int.TryParse(tbFirstHit_Kha.Text, out numberCheck) || numberCheck <= 0)) return "THỨ TỰ viên trúng đầu tiên điểm KHÁ phải là số nguyên > 0";
-        //        if (cbCountFirstHit.Checked &&
-        //            (!int.TryParse(tbFirstHit_Dat.Text, out numberCheck) || numberCheck <= 0)) return "THỨ TỰ viên trúng đầu tiên điểm ĐẠT phải là số nguyên > 0";
+                if (cbCountFirstHit.Checked &&
+                    (!int.TryParse(tbFirstHit_Gioi.Text, out numberCheck) || numberCheck <= 0)) return "THỨ TỰ viên trúng đầu tiên điểm GIỎI phải là số nguyên > 0";
+                if (cbCountFirstHit.Checked &&
+                    (!int.TryParse(tbFirstHit_Kha.Text, out numberCheck) || numberCheck <= 0)) return "THỨ TỰ viên trúng đầu tiên điểm KHÁ phải là số nguyên > 0";
+                if (cbCountFirstHit.Checked &&
+                    (!int.TryParse(tbFirstHit_Dat.Text, out numberCheck) || numberCheck <= 0)) return "THỨ TỰ viên trúng đầu tiên điểm ĐẠT phải là số nguyên > 0";
 
-        //        //pass data
-        //        dataBBEdited.SoLuongDan = int.Parse(tbSoDan.Text);
-        //        dataBBEdited.DrawHitPoint = cbDrawHitPoint.Checked;
+                //pass data
+                dataBBEdited.SoLuongDan = int.Parse(tbSoDan.Text);
+                dataBBEdited.DrawHitPoint = cbDrawHitPoint.Checked;
 
-        //        dataBBEdited.DiemGioi = int.Parse(tbDiemGioi.Text);
-        //        dataBBEdited.DiemKha = int.Parse(tbDiemKha.Text);
-        //        dataBBEdited.DiemDat = int.Parse(tbDiemDat.Text);
+                dataBBEdited.DiemGioi = int.Parse(tbDiemGioi.Text);
+                dataBBEdited.DiemKha = int.Parse(tbDiemKha.Text);
+                dataBBEdited.DiemDat = int.Parse(tbDiemDat.Text);
 
-        //        dataBBEdited.TotalHitCheck = cbCountHit.Checked;
-        //        dataBBEdited.TotalHit_Gioi = int.Parse(tbCountHit_Gioi.Text);
-        //        dataBBEdited.TotalHit_Kha = int.Parse(tbCountHit_Kha.Text);
-        //        dataBBEdited.TotalHit_Dat = int.Parse(tbCountHit_Dat.Text);
+                dataBBEdited.TotalHitCheck = cbCountHit.Checked;
+                dataBBEdited.TotalHit_Gioi = int.Parse(tbCountHit_Gioi.Text);
+                dataBBEdited.TotalHit_Kha = int.Parse(tbCountHit_Kha.Text);
+                dataBBEdited.TotalHit_Dat = int.Parse(tbCountHit_Dat.Text);
 
-        //        dataBBEdited.FirstHitCheck = cbCountFirstHit.Checked;
-        //        dataBBEdited.FirstHit_Gioi = int.Parse(tbFirstHit_Gioi.Text);
-        //        dataBBEdited.FirstHit_Kha = int.Parse(tbFirstHit_Kha.Text);
-        //        dataBBEdited.FirstHit_Dat = int.Parse(tbFirstHit_Dat.Text);
+                dataBBEdited.FirstHitCheck = cbCountFirstHit.Checked;
+                dataBBEdited.FirstHit_Gioi = int.Parse(tbFirstHit_Gioi.Text);
+                dataBBEdited.FirstHit_Kha = int.Parse(tbFirstHit_Kha.Text);
+                dataBBEdited.FirstHit_Dat = int.Parse(tbFirstHit_Dat.Text);
 
-        //        dataBBEdited.BulletRemainsCheck = cbBulletRemains.Checked;
-        //        dataBBEdited.BulletRemain_Gioi = cbBulletRemain_Gioi.Checked;
-        //        dataBBEdited.BulletRemain_Kha = cbBulletRemain_Kha.Checked;
-        //        dataBBEdited.BulletRemain_Dat = cbBulletRemain_Dat.Checked;
+                dataBBEdited.BulletRemainsCheck = cbBulletRemains.Checked;
+                dataBBEdited.BulletRemain_Gioi = cbBulletRemain_Gioi.Checked;
+                dataBBEdited.BulletRemain_Kha = cbBulletRemain_Kha.Checked;
+                dataBBEdited.BulletRemain_Dat = cbBulletRemain_Dat.Checked;
 
-        //        return string.Empty;
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return "Lỗi lấy thông tin điều kiện bài bắn";
-        //    }
-        //}
+                return string.Empty;
+            }
+            catch (Exception)
+            {
+                return "Lỗi lấy thông tin điều kiện bài bắn";
+            }
+        }
 
         public void ResetData()
         {

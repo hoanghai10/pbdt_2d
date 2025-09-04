@@ -115,7 +115,7 @@ namespace PBDT_2D.Manager
             {
                 tcpClient = tcpListener.EndAcceptTcpClient(iar);
 
-                //this.frmMain.SetConnectStatus(true);
+                this.frmMain.SetConnectStatus(true);
 
                 tcpListener.BeginAcceptTcpClient(new AsyncCallback(this.onCompleteAcceptTcpClient), tcpListener);
                 lock (this.mlClientSocks)
@@ -133,7 +133,7 @@ namespace PBDT_2D.Manager
             catch (Exception)
             {
                 tcpListener.Stop();
-                //this.frmMain.SetConnectStatus(false);
+                this.frmMain.SetConnectStatus(false);
                 MessageBox.Show("Chưa có kết nối đến máy 3D", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
         }
@@ -151,7 +151,7 @@ namespace PBDT_2D.Manager
                     if (num == 0)
                     {
                         mlClientSocks.Remove(clientNode);
-                        //frmMain.SetConnectStatus(false);
+                        frmMain.SetConnectStatus(false);
                     }
                     else
                     {
@@ -163,7 +163,7 @@ namespace PBDT_2D.Manager
                         else
                         {
                             mlClientSocks.Remove(clientNode);
-                            //frmMain.SetConnectStatus(false);
+                            frmMain.SetConnectStatus(false);
                         }
 
                         tcpc.GetStream().BeginRead(clientNode.Rx, 0, clientNode.Rx.Length, new AsyncCallback(this.onCompleteReadFromTCPClientStream), tcpc);
@@ -175,7 +175,7 @@ namespace PBDT_2D.Manager
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 lock (this.mlClientSocks)
                 {
-                    //this.frmMain.SetConnectStatus(false);
+                    this.frmMain.SetConnectStatus(false);
                     this.mlClientSocks.Remove(clientNode);
                 }
             }

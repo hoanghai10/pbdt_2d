@@ -1,12 +1,15 @@
 C:\Users\TecApro\Documents\TestGirdView\pbdt_2d\obj\Debug\net8.0-windows\PBDT_2D.csproj.AssemblyReference.cache
 C:\Users\TecApro\Documents\TestGirdView\pbdt_2d\obj\Debug\net8.0-windows\PBDT_2D.VS_MainManager.resources
+C:\Users\TecApro\Documents\TestGirdView\pbdt_2d\obj\Debug\net8.0-windows\PBDT_2D.KipBan.resources
 C:\Users\TecApro\Documents\TestGirdView\pbdt_2d\obj\Debug\net8.0-windows\PBDT_2D.MyResource.resources
-C:\Users\TecApro\Documents\TestGirdView\pbdt_2d\obj\Debug\net8.0-windows\TBA2D.Forms.UserControls.VS_DieuKienBB.resources
-C:\Users\TecApro\Documents\TestGirdView\pbdt_2d\obj\Debug\net8.0-windows\TBA2D.Forms.UserControls.VS_DieuKienBia.resources
+C:\Users\TecApro\Documents\TestGirdView\pbdt_2d\obj\Debug\net8.0-windows\PBDT_2D.Forms.UserControls.VS_DieuKienBB.resources
+C:\Users\TecApro\Documents\TestGirdView\pbdt_2d\obj\Debug\net8.0-windows\PBDT_2D.Forms.UserControls.VS_DieuKienBia.resources
 C:\Users\TecApro\Documents\TestGirdView\pbdt_2d\obj\Debug\net8.0-windows\PBDT_2D.UserManager.resources
 C:\Users\TecApro\Documents\TestGirdView\pbdt_2d\obj\Debug\net8.0-windows\PBDT_2D.VS_DanhSachPhuTrach.resources
 C:\Users\TecApro\Documents\TestGirdView\pbdt_2d\obj\Debug\net8.0-windows\PBDT_2D.Forms.VS_GiaoVuAddEdit.resources
 C:\Users\TecApro\Documents\TestGirdView\pbdt_2d\obj\Debug\net8.0-windows\PBDT_2D.Forms.VS_Main.resources
+C:\Users\TecApro\Documents\TestGirdView\pbdt_2d\obj\Debug\net8.0-windows\PBDT_2D.Forms.VS_PrintPreview.resources
+C:\Users\TecApro\Documents\TestGirdView\pbdt_2d\obj\Debug\net8.0-windows\PBDT_2D.Forms.VS_Search.resources
 C:\Users\TecApro\Documents\TestGirdView\pbdt_2d\obj\Debug\net8.0-windows\PBDT_2D.Forms.VS_UserAddEdit.resources
 C:\Users\TecApro\Documents\TestGirdView\pbdt_2d\obj\Debug\net8.0-windows\PBDT_2D.csproj.GenerateResource.cache
 C:\Users\TecApro\Documents\TestGirdView\pbdt_2d\obj\Debug\net8.0-windows\PBDT_2D.GeneratedMSBuildEditorConfig.editorconfig
@@ -73,3 +76,5 @@ C:\Users\TecApro\Documents\TestGirdView\pbdt_2d\obj\Debug\net8.0-windows\refint\
 C:\Users\TecApro\Documents\TestGirdView\pbdt_2d\obj\Debug\net8.0-windows\PBDT_2D.pdb
 C:\Users\TecApro\Documents\TestGirdView\pbdt_2d\obj\Debug\net8.0-windows\PBDT_2D.genruntimeconfig.cache
 C:\Users\TecApro\Documents\TestGirdView\pbdt_2d\obj\Debug\net8.0-windows\ref\PBDT_2D.dll
+C:\Users\TecApro\Documents\TestGirdView\pbdt_2d\obj\Debug\net8.0-windows\PBDT_2D.Forms.VS_HABBByGun.resources
+C:\Users\TecApro\Documents\TestGirdView\pbdt_2d\obj\Debug\net8.0-windows\PBDT_2D.Forms.VS_HABBByTarget.resources

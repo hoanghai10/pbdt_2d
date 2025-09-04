@@ -55,6 +55,15 @@
             teacher_NamSinh = new DataGridViewTextBoxColumn();
             btnRemoveTeacher = new Button();
             grdUsersShooting = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            ThuTu = new DataGridViewTextBoxColumn();
+            Ten = new DataGridViewTextBoxColumn();
+            QuanHamId = new DataGridViewTextBoxColumn();
+            QuanHam = new DataGridViewTextBoxColumn();
+            ChucVu = new DataGridViewTextBoxColumn();
+            DonVi = new DataGridViewTextBoxColumn();
+            GhiChu = new DataGridViewTextBoxColumn();
+            NamSinh = new DataGridViewTextBoxColumn();
             layoutMain = new TableLayoutPanel();
             groupBox9 = new GroupBox();
             tableLayoutPanel2 = new TableLayoutPanel();
@@ -66,6 +75,8 @@
             tbFilterNamSinhGv = new TextBox();
             btnResetFilterGv = new Button();
             layoutCrewDetail = new TableLayoutPanel();
+            btnLoad = new Button();
+            btnSave = new Button();
             grdSung = new DataGridView();
             GunId = new DataGridViewTextBoxColumn();
             layoutUserShootingButtons = new TableLayoutPanel();
@@ -94,16 +105,7 @@
             userList_ChucVu = new DataGridViewTextBoxColumn();
             userList_DonVi = new DataGridViewTextBoxColumn();
             userList_GhiChu = new DataGridViewTextBoxColumn();
-            NamSinhHv = new DataGridViewTextBoxColumn();
-            Id = new DataGridViewTextBoxColumn();
-            ThuTu = new DataGridViewTextBoxColumn();
-            Ten = new DataGridViewTextBoxColumn();
-            QuanHamId = new DataGridViewTextBoxColumn();
-            QuanHam = new DataGridViewTextBoxColumn();
-            ChucVu = new DataGridViewTextBoxColumn();
-            DonVi = new DataGridViewTextBoxColumn();
-            GhiChu = new DataGridViewTextBoxColumn();
-            NamSinh = new DataGridViewTextBoxColumn();
+            userList_NamSinh = new DataGridViewTextBoxColumn();
             gbFilter.SuspendLayout();
             layoutFilter.SuspendLayout();
             groupBox15.SuspendLayout();
@@ -443,6 +445,80 @@
             grdUsersShooting.TabIndex = 1;
             grdUsersShooting.SelectionChanged += grdUsersShooting_SelectionChanged;
             // 
+            // Id
+            // 
+            Id.DataPropertyName = "Id";
+            Id.HeaderText = "Id";
+            Id.Name = "Id";
+            Id.Visible = false;
+            // 
+            // ThuTu
+            // 
+            ThuTu.DataPropertyName = "ThuTu";
+            ThuTu.HeaderText = "STT";
+            ThuTu.Name = "ThuTu";
+            ThuTu.ReadOnly = true;
+            ThuTu.Resizable = DataGridViewTriState.False;
+            ThuTu.Visible = false;
+            ThuTu.Width = 50;
+            // 
+            // Ten
+            // 
+            Ten.DataPropertyName = "Ten";
+            Ten.HeaderText = "Tên";
+            Ten.MinimumWidth = 150;
+            Ten.Name = "Ten";
+            Ten.ReadOnly = true;
+            Ten.Width = 200;
+            // 
+            // QuanHamId
+            // 
+            QuanHamId.DataPropertyName = "QuanHamId";
+            QuanHamId.HeaderText = "QuanHamId";
+            QuanHamId.Name = "QuanHamId";
+            QuanHamId.Visible = false;
+            // 
+            // QuanHam
+            // 
+            QuanHam.DataPropertyName = "QuanHam";
+            QuanHam.HeaderText = "Quân hàm";
+            QuanHam.MinimumWidth = 80;
+            QuanHam.Name = "QuanHam";
+            QuanHam.ReadOnly = true;
+            // 
+            // ChucVu
+            // 
+            ChucVu.DataPropertyName = "ChucVu";
+            ChucVu.HeaderText = "Chức vụ";
+            ChucVu.MinimumWidth = 100;
+            ChucVu.Name = "ChucVu";
+            ChucVu.ReadOnly = true;
+            ChucVu.Width = 150;
+            // 
+            // DonVi
+            // 
+            DonVi.DataPropertyName = "DonVi";
+            DonVi.HeaderText = "Đơn vị";
+            DonVi.MinimumWidth = 100;
+            DonVi.Name = "DonVi";
+            DonVi.ReadOnly = true;
+            DonVi.Width = 150;
+            // 
+            // GhiChu
+            // 
+            GhiChu.DataPropertyName = "GhiChu";
+            GhiChu.HeaderText = "Ghi chú";
+            GhiChu.MinimumWidth = 100;
+            GhiChu.Name = "GhiChu";
+            GhiChu.ReadOnly = true;
+            GhiChu.Width = 150;
+            // 
+            // NamSinh
+            // 
+            NamSinh.DataPropertyName = "NamSinh";
+            NamSinh.HeaderText = "Năm Sinh";
+            NamSinh.Name = "NamSinh";
+            // 
             // layoutMain
             // 
             layoutMain.BackColor = SystemColors.Control;
@@ -592,6 +668,8 @@
             layoutCrewDetail.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 58F));
             layoutCrewDetail.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             layoutCrewDetail.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 58F));
+            layoutCrewDetail.Controls.Add(btnLoad, 0, 0);
+            layoutCrewDetail.Controls.Add(btnSave, 2, 0);
             layoutCrewDetail.Controls.Add(grdSung, 0, 1);
             layoutCrewDetail.Controls.Add(grdUsersShooting, 1, 1);
             layoutCrewDetail.Controls.Add(layoutUserShootingButtons, 2, 1);
@@ -605,6 +683,34 @@
             layoutCrewDetail.RowStyles.Add(new RowStyle(SizeType.Percent, 82.21477F));
             layoutCrewDetail.Size = new Size(1609, 323);
             layoutCrewDetail.TabIndex = 0;
+            // 
+            // btnLoad
+            // 
+            btnLoad.BackgroundImage = MyResource.save_2;
+            btnLoad.BackgroundImageLayout = ImageLayout.Zoom;
+            btnLoad.Dock = DockStyle.Fill;
+            btnLoad.Location = new Point(4, 3);
+            btnLoad.Margin = new Padding(4, 3, 4, 3);
+            btnLoad.Name = "btnLoad";
+            btnLoad.Size = new Size(50, 51);
+            btnLoad.TabIndex = 6;
+            btnLoad.Text = " ";
+            btnLoad.UseVisualStyleBackColor = true;
+            btnLoad.Click += btnLoad_Click;
+            // 
+            // btnSave
+            // 
+            btnSave.BackgroundImage = MyResource.save_2;
+            btnSave.BackgroundImageLayout = ImageLayout.Zoom;
+            btnSave.Dock = DockStyle.Fill;
+            btnSave.Location = new Point(1555, 3);
+            btnSave.Margin = new Padding(4, 3, 4, 3);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(50, 51);
+            btnSave.TabIndex = 5;
+            btnSave.Text = " ";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // grdSung
             // 
@@ -833,7 +939,7 @@
             // 
             grdUsersList.AllowUserToResizeRows = false;
             grdUsersList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            grdUsersList.Columns.AddRange(new DataGridViewColumn[] { userList_Id, userList_ThuTu, userList_Ten, userList_QuanHamId, userList_QuanHam, userList_ChucVu, userList_DonVi, userList_GhiChu, NamSinhHv });
+            grdUsersList.Columns.AddRange(new DataGridViewColumn[] { userList_Id, userList_ThuTu, userList_Ten, userList_QuanHamId, userList_QuanHam, userList_ChucVu, userList_DonVi, userList_GhiChu, userList_NamSinh });
             grdUsersList.Dock = DockStyle.Fill;
             grdUsersList.Location = new Point(3, 19);
             grdUsersList.Margin = new Padding(4, 3, 4, 3);
@@ -912,85 +1018,11 @@
             userList_GhiChu.ReadOnly = true;
             userList_GhiChu.Width = 150;
             // 
-            // NamSinhHv
+            // userList_NamSinh
             // 
-            NamSinhHv.DataPropertyName = "NamSinh";
-            NamSinhHv.HeaderText = "Năm sinh";
-            NamSinhHv.Name = "NamSinhHv";
-            // 
-            // Id
-            // 
-            Id.DataPropertyName = "Id";
-            Id.HeaderText = "Id";
-            Id.Name = "Id";
-            Id.Visible = false;
-            // 
-            // ThuTu
-            // 
-            ThuTu.DataPropertyName = "ThuTu";
-            ThuTu.HeaderText = "STT";
-            ThuTu.Name = "ThuTu";
-            ThuTu.ReadOnly = true;
-            ThuTu.Resizable = DataGridViewTriState.False;
-            ThuTu.Visible = false;
-            ThuTu.Width = 50;
-            // 
-            // Ten
-            // 
-            Ten.DataPropertyName = "Ten";
-            Ten.HeaderText = "Tên";
-            Ten.MinimumWidth = 150;
-            Ten.Name = "Ten";
-            Ten.ReadOnly = true;
-            Ten.Width = 200;
-            // 
-            // QuanHamId
-            // 
-            QuanHamId.DataPropertyName = "QuanHamId";
-            QuanHamId.HeaderText = "QuanHamId";
-            QuanHamId.Name = "QuanHamId";
-            QuanHamId.Visible = false;
-            // 
-            // QuanHam
-            // 
-            QuanHam.DataPropertyName = "QuanHam";
-            QuanHam.HeaderText = "Quân hàm";
-            QuanHam.MinimumWidth = 80;
-            QuanHam.Name = "QuanHam";
-            QuanHam.ReadOnly = true;
-            // 
-            // ChucVu
-            // 
-            ChucVu.DataPropertyName = "ChucVu";
-            ChucVu.HeaderText = "Chức vụ";
-            ChucVu.MinimumWidth = 100;
-            ChucVu.Name = "ChucVu";
-            ChucVu.ReadOnly = true;
-            ChucVu.Width = 150;
-            // 
-            // DonVi
-            // 
-            DonVi.DataPropertyName = "DonVi";
-            DonVi.HeaderText = "Đơn vị";
-            DonVi.MinimumWidth = 100;
-            DonVi.Name = "DonVi";
-            DonVi.ReadOnly = true;
-            DonVi.Width = 150;
-            // 
-            // GhiChu
-            // 
-            GhiChu.DataPropertyName = "GhiChu";
-            GhiChu.HeaderText = "Ghi chú";
-            GhiChu.MinimumWidth = 100;
-            GhiChu.Name = "GhiChu";
-            GhiChu.ReadOnly = true;
-            GhiChu.Width = 150;
-            // 
-            // NamSinh
-            // 
-            NamSinh.DataPropertyName = "NamSinh";
-            NamSinh.HeaderText = "Năm Sinh";
-            NamSinh.Name = "NamSinh";
+            userList_NamSinh.DataPropertyName = "NamSinh";
+            userList_NamSinh.HeaderText = "Năm sinh";
+            userList_NamSinh.Name = "userList_NamSinh";
             // 
             // VS_DanhSachPhuTrach
             // 
@@ -999,10 +1031,9 @@
             ClientSize = new Size(1617, 942);
             Controls.Add(layoutMain);
             Name = "VS_DanhSachPhuTrach";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "VS_DanhSachPhuTrach";
-            WindowState = FormWindowState.Maximized;
             FormClosed += VS_CrewSetup_FormClosed;
-            Load += VS_CrewSetup_Load;
             gbFilter.ResumeLayout(false);
             layoutFilter.ResumeLayout(false);
             groupBox15.ResumeLayout(false);
@@ -1092,15 +1123,6 @@
         private DataGridViewTextBoxColumn teacher_Ten;
         private DataGridViewTextBoxColumn teacher_QuanHam;
         private DataGridViewTextBoxColumn teacher_NamSinh;
-        private DataGridViewTextBoxColumn userList_Id;
-        private DataGridViewTextBoxColumn userList_ThuTu;
-        private DataGridViewTextBoxColumn userList_Ten;
-        private DataGridViewTextBoxColumn userList_QuanHamId;
-        private DataGridViewTextBoxColumn userList_QuanHam;
-        private DataGridViewTextBoxColumn userList_ChucVu;
-        private DataGridViewTextBoxColumn userList_DonVi;
-        private DataGridViewTextBoxColumn userList_GhiChu;
-        private DataGridViewTextBoxColumn NamSinhHv;
         private DataGridViewTextBoxColumn gvList_Id;
         private DataGridViewTextBoxColumn gvList_ThuTu;
         private DataGridViewTextBoxColumn gvList_Ten;
@@ -1116,5 +1138,16 @@
         private DataGridViewTextBoxColumn DonVi;
         private DataGridViewTextBoxColumn GhiChu;
         private DataGridViewTextBoxColumn NamSinh;
+        private DataGridViewTextBoxColumn userList_Id;
+        private DataGridViewTextBoxColumn userList_ThuTu;
+        private DataGridViewTextBoxColumn userList_Ten;
+        private DataGridViewTextBoxColumn userList_QuanHamId;
+        private DataGridViewTextBoxColumn userList_QuanHam;
+        private DataGridViewTextBoxColumn userList_ChucVu;
+        private DataGridViewTextBoxColumn userList_DonVi;
+        private DataGridViewTextBoxColumn userList_GhiChu;
+        private DataGridViewTextBoxColumn userList_NamSinh;
+        private Button btnSave;
+        private Button btnLoad;
     }
 }

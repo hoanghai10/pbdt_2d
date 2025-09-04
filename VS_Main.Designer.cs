@@ -68,7 +68,6 @@
             leftBot_gbOtherFunctions = new GroupBox();
             leftBot_layoutOtherFunctions = new TableLayoutPanel();
             leftBot_btnUser = new Button();
-            leftBot_btnCrewSetup = new Button();
             leftBot_btnSearch = new Button();
             layout_Center = new TableLayoutPanel();
             midTop_gbHABB = new GroupBox();
@@ -85,6 +84,7 @@
             rightBot_layoutBtnsDKBB = new TableLayoutPanel();
             rightBot_btnEditDKBB = new Button();
             rightBot_btnCancelDKBB = new Button();
+            leftBot_btnCrewSetup = new Button();
             layoutMain.SuspendLayout();
             layoutLeft.SuspendLayout();
             leftTop_gbLoaiSung.SuspendLayout();
@@ -165,6 +165,7 @@
             leftTop_cboLoaiSung.Name = "leftTop_cboLoaiSung";
             leftTop_cboLoaiSung.Size = new Size(268, 23);
             leftTop_cboLoaiSung.TabIndex = 0;
+            leftTop_cboLoaiSung.SelectedIndexChanged += leftTop_cboLoaiSung_SelectedIndexChanged;
             // 
             // leftMid_gbDSBB
             // 
@@ -194,6 +195,7 @@
             leftMid_grdDSBB.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             leftMid_grdDSBB.Size = new Size(268, 426);
             leftMid_grdDSBB.TabIndex = 0;
+            leftMid_grdDSBB.SelectionChanged += leftMid_grdDSBB_SelectionChanged;
             // 
             // Id
             // 
@@ -480,30 +482,16 @@
             // 
             leftBot_btnUser.Dock = DockStyle.Fill;
             leftBot_btnUser.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            leftBot_btnUser.Image = MyResource.open_2;
             leftBot_btnUser.Location = new Point(12, 12);
             leftBot_btnUser.Margin = new Padding(12);
             leftBot_btnUser.Name = "leftBot_btnUser";
             leftBot_btnUser.Size = new Size(244, 62);
             leftBot_btnUser.TabIndex = 0;
-            leftBot_btnUser.Text = "Danh sách giáo viên";
+            leftBot_btnUser.Text = "Danh sách huấn luyện";
             leftBot_btnUser.TextImageRelation = TextImageRelation.ImageBeforeText;
             leftBot_btnUser.UseVisualStyleBackColor = true;
             leftBot_btnUser.Click += leftBot_btnUser_Click;
-            // 
-            // leftBot_btnCrewSetup
-            // 
-            leftBot_btnCrewSetup.BackgroundImageLayout = ImageLayout.None;
-            leftBot_btnCrewSetup.Dock = DockStyle.Fill;
-            leftBot_btnCrewSetup.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            leftBot_btnCrewSetup.Image = (Image)resources.GetObject("leftBot_btnCrewSetup.Image");
-            leftBot_btnCrewSetup.Location = new Point(12, 98);
-            leftBot_btnCrewSetup.Margin = new Padding(12);
-            leftBot_btnCrewSetup.Name = "leftBot_btnCrewSetup";
-            leftBot_btnCrewSetup.Size = new Size(244, 62);
-            leftBot_btnCrewSetup.TabIndex = 1;
-            leftBot_btnCrewSetup.Text = "Quản lý kíp bắn";
-            leftBot_btnCrewSetup.TextImageRelation = TextImageRelation.ImageBeforeText;
-            leftBot_btnCrewSetup.UseVisualStyleBackColor = true;
             // 
             // leftBot_btnSearch
             // 
@@ -518,6 +506,7 @@
             leftBot_btnSearch.Text = "Kết quả bắn";
             leftBot_btnSearch.TextImageRelation = TextImageRelation.ImageBeforeText;
             leftBot_btnSearch.UseVisualStyleBackColor = true;
+            leftBot_btnSearch.Click += leftBot_btnSearch_Click;
             // 
             // layout_Center
             // 
@@ -602,6 +591,7 @@
             midBot_btnStop.Text = "Kết thúc";
             midBot_btnStop.TextImageRelation = TextImageRelation.ImageBeforeText;
             midBot_btnStop.UseVisualStyleBackColor = true;
+            midBot_btnStop.Click += midBot_btnStop_Click;
             // 
             // midBot_btnViewHABeBan
             // 
@@ -617,6 +607,7 @@
             midBot_btnViewHABeBan.TextAlign = ContentAlignment.MiddleRight;
             midBot_btnViewHABeBan.TextImageRelation = TextImageRelation.ImageBeforeText;
             midBot_btnViewHABeBan.UseVisualStyleBackColor = true;
+            midBot_btnViewHABeBan.Click += midBot_btnViewHABeBan_Click;
             // 
             // midBot_btnStart
             // 
@@ -628,10 +619,11 @@
             midBot_btnStart.Name = "midBot_btnStart";
             midBot_btnStart.Size = new Size(151, 150);
             midBot_btnStart.TabIndex = 0;
-            midBot_btnStart.Text = "Chuẩn bị";
+            midBot_btnStart.Text = "Bắt đầu";
             midBot_btnStart.TextAlign = ContentAlignment.MiddleRight;
             midBot_btnStart.TextImageRelation = TextImageRelation.ImageBeforeText;
             midBot_btnStart.UseVisualStyleBackColor = true;
+            midBot_btnStart.Click += midBot_btnStart_Click;
             // 
             // layoutRight
             // 
@@ -715,6 +707,7 @@
             rightBot_btnEditDKBB.TextAlign = ContentAlignment.MiddleRight;
             rightBot_btnEditDKBB.TextImageRelation = TextImageRelation.ImageBeforeText;
             rightBot_btnEditDKBB.UseVisualStyleBackColor = true;
+            rightBot_btnEditDKBB.Click += rightBot_btnEditDKBB_Click;
             // 
             // rightBot_btnCancelDKBB
             // 
@@ -730,6 +723,23 @@
             rightBot_btnCancelDKBB.TextAlign = ContentAlignment.MiddleRight;
             rightBot_btnCancelDKBB.TextImageRelation = TextImageRelation.ImageBeforeText;
             rightBot_btnCancelDKBB.UseVisualStyleBackColor = true;
+            rightBot_btnCancelDKBB.Click += rightBot_btnCancelDKBB_Click;
+            // 
+            // leftBot_btnCrewSetup
+            // 
+            leftBot_btnCrewSetup.BackgroundImageLayout = ImageLayout.None;
+            leftBot_btnCrewSetup.Dock = DockStyle.Fill;
+            leftBot_btnCrewSetup.Font = new Font("Microsoft Sans Serif", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            leftBot_btnCrewSetup.Image = (Image)resources.GetObject("leftBot_btnCrewSetup.Image");
+            leftBot_btnCrewSetup.Location = new Point(12, 98);
+            leftBot_btnCrewSetup.Margin = new Padding(12);
+            leftBot_btnCrewSetup.Name = "leftBot_btnCrewSetup";
+            leftBot_btnCrewSetup.Size = new Size(244, 62);
+            leftBot_btnCrewSetup.TabIndex = 1;
+            leftBot_btnCrewSetup.Text = "Quản lý kíp bắn";
+            leftBot_btnCrewSetup.TextImageRelation = TextImageRelation.ImageBeforeText;
+            leftBot_btnCrewSetup.UseVisualStyleBackColor = true;
+            leftBot_btnCrewSetup.Click += leftBot_btnCrewSetup_Click;
             // 
             // VS_Main
             // 
@@ -822,7 +832,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn DrawHitPoint;
         private System.Windows.Forms.TableLayoutPanel leftBot_layoutOtherFunctions;
         private System.Windows.Forms.Button leftBot_btnUser;
-        private System.Windows.Forms.Button leftBot_btnCrewSetup;
         private System.Windows.Forms.Button leftBot_btnSearch;
+        private Button leftBot_btnCrewSetup;
     }
 }

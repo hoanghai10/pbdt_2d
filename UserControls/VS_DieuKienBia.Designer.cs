@@ -1,4 +1,4 @@
-﻿namespace TBA2D.Forms.UserControls
+﻿namespace PBDT_2D.Forms.UserControls
 {
     partial class VS_DieuKienBia
     {

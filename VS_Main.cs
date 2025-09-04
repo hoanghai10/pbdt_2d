@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PBDT_2D.Forms.UserControls;
+using PBDT_2D.Manager;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,14 +9,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using PBDT_2D.Manager;
+using static PBDT_2D.Manager.VS_HABBFormData;
 
 namespace PBDT_2D.Forms
 {
     public partial class VS_Main : Form
     {
         VS_NetworkManager netManager;
-
         //Flag controls
         bool isShooting;
         bool isEditExCondition;
@@ -98,20 +99,20 @@ namespace PBDT_2D.Forms
             int count = Math.Max(lstBia.Count, lstThoiGian.Count);
             for (int i = 0; i < count; i++)
             {
-                //var dkBia = new VS_DieuKienBia();
+                var dkBia = new VS_DieuKienBia();
 
                 var bia = i < lstBia.Count ? lstBia[i] : string.Empty;
                 var tg = i < lstThoiGian.Count ? lstThoiGian[i] : string.Empty;
-                //dkBia.InitData(bia, tg);
+                dkBia.InitData(bia, tg);
 
-                //rightTop_layoutDieuKienBB.Controls.Add(dkBia);
+                rightTop_layoutDieuKienBB.Controls.Add(dkBia);
             }
 
             //DK bai ban
-            //var dkBB = new VS_DieuKienBB();
+            var dkBB = new VS_DieuKienBB();
             //khong can mo dkBB.InitData(crSelectedEx.SoLuongDan, crSelectedEx.DiemGioi, crSelectedEx.DiemKha, crSelectedEx.DiemDat);
-            //dkBB.InitData(crSelectedEx);
-            //rightTop_layoutDieuKienBB.Controls.Add(dkBB);
+            dkBB.InitData(crSelectedEx);
+            rightTop_layoutDieuKienBB.Controls.Add(dkBB);
         }
 
         void GetSelectedBB()
@@ -182,7 +183,33 @@ namespace PBDT_2D.Forms
 
         private void midBot_btnStart_Click(object sender, EventArgs e)
         {
-            PreviewOrStartBB(VS_CommandType.SetupCrew);
+            if (SelectedDataStore.HocVienIds == null || !SelectedDataStore.HocVienIds.Any())
+            {
+                MessageBox.Show("Chưa chọn học viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Lấy danh sách từ DB
+            var (hocVienTable, giaoVuTable) = VS_DBManager.LoadSelectedUsers(
+                SelectedDataStore.HocVienIds,
+                SelectedDataStore.GiaoVuIds
+            );
+
+            // Convert DataTable -> List<VS_User>
+            crCrewSetupEx = hocVienTable.AsEnumerable().Select(r => new VS_User
+            {
+                Id = r.Field<int>("Id"),
+                Ten = r.Field<string>("Ten"),
+                QuanHamId = r.Field<int>("QuanHamId"),
+                QuanHam = r.Field<string>("QuanHam"),
+                ChucVu = r.Field<string>("ChucVu"),
+                DonVi = r.Field<string>("DonVi"),
+                GhiChu = r.Field<string>("GhiChu"),
+                NamSinh = r.Field<int?>("NamSinh")
+            }).ToList();
+
+            // Gọi Start
+            PreviewOrStartBB(VS_CommandType.Start);
         }
 
         private void midBot_btnStop_Click(object sender, EventArgs e)
@@ -223,32 +250,37 @@ namespace PBDT_2D.Forms
         private void rightBot_btnCancelDKBB_Click(object sender, EventArgs e)
         {
             //Reset data
-            //int count = rightTop_layoutDieuKienBB.Controls.Count;
-            //for (int i = 0; i < count - 1; i++)
-            //    ((VS_DieuKienBia)rightTop_layoutDieuKienBB.Controls[i]).ResetData();
+            int count = rightTop_layoutDieuKienBB.Controls.Count;
+            for (int i = 0; i < count - 1; i++)
+                ((VS_DieuKienBia)rightTop_layoutDieuKienBB.Controls[i]).ResetData();
 
-            //((VS_DieuKienBB)rightTop_layoutDieuKienBB.Controls[count - 1]).ResetData();
+            ((VS_DieuKienBB)rightTop_layoutDieuKienBB.Controls[count - 1]).ResetData();
 
-            //isEditExCondition = false;
-            //UpdateUI();
+            isEditExCondition = false;
+            UpdateUI();
         }
 
         private void leftBot_btnUser_Click(object sender, EventArgs e)
         {
             var userForm = new VS_DanhSachPhuTrach();
+            userForm.OnSetupSaved += (filePath) =>
+            {
+                _lastSetupFilePath = filePath;
+            };
+            ;
             userForm.ShowDialog();
         }
 
         private void leftBot_btnCrewSetup_Click(object sender, EventArgs e)
         {
-            //var crewForm = new VS_CrewSetup();
-            //crewForm.ShowDialog();
+            var crewForm = new KipBan();
+            crewForm.ShowDialog();
         }
 
         private void leftBot_btnSearch_Click(object sender, EventArgs e)
         {
-            //var searchForm = new VS_Search();
-            //searchForm.ShowDialog();
+            var searchForm = new VS_Search();
+            searchForm.ShowDialog();
         }
         #endregion
 
@@ -331,7 +363,7 @@ namespace PBDT_2D.Forms
                         return false;
                     }
 
-                    //var crewForm = new VS_CrewSetup(
+                    //var crewForm = new KipBan(
                     //    string.Format("{0} {1}", ((VS_LoaiSung)leftTop_cboLoaiSung.SelectedItem).Name, crSelectedEx.TenBB),
                     //    savedCrewSetup);
 
@@ -440,7 +472,7 @@ namespace PBDT_2D.Forms
 
         void ShowHABB()
         {
-            string typeName = crShootingEx.DisplayType == (int)VS_BBDisplayType.ByTarget ? "TBA2D.Forms.VS_HABBByTarget" : "TBA2D.Forms.VS_HABBByGun";
+            string typeName = crShootingEx.DisplayType == (int)VS_BBDisplayType.ByTarget ? "PBDT_2D.Forms.VS_HABBByTarget" : "PBDT_2D.Forms.VS_HABBByGun";
             //Assembly entryAssembly = Assembly.GetEntryAssembly();
             Type type = Type.GetType(typeName);
 
@@ -512,29 +544,29 @@ namespace PBDT_2D.Forms
             var msg = string.Empty;
             //lay data dk bia
             var lstTgAnHien = new List<string>();
-            //for (int i = 0; i < count - 1; i++)
-            //{
-            //    var dkBia = (VS_DieuKienBia)rightTop_layoutDieuKienBB.Controls[i];
-            //    msg = dkBia.GetData(out string tgAnHien);
+            for (int i = 0; i < count - 1; i++)
+            {
+                var dkBia = (VS_DieuKienBia)rightTop_layoutDieuKienBB.Controls[i];
+                msg = dkBia.GetData(out string tgAnHien);
 
-            //    if (string.IsNullOrEmpty(msg))
-            //        lstTgAnHien.Add(tgAnHien);
-            //    else
-            //    {
-            //        MessageBox.Show(msg);
-            //        return false;
-            //    }
-            //}
+                if (string.IsNullOrEmpty(msg))
+                    lstTgAnHien.Add(tgAnHien);
+                else
+                {
+                    MessageBox.Show(msg);
+                    return false;
+                }
+            }
             data.ThoiGianAnHien = string.Join("|", lstTgAnHien);
 
             //lay data dk tinh diem
-            //var dkBB = (VS_DieuKienBB)rightTop_layoutDieuKienBB.Controls[count - 1];
-            //msg = dkBB.GetData(ref data);
-            //if (!string.IsNullOrEmpty(msg))
-            //{
-            //    MessageBox.Show(msg);
-            //    return false;
-            //}
+            var dkBB = (VS_DieuKienBB)rightTop_layoutDieuKienBB.Controls[count - 1];
+            msg = dkBB.GetData(ref data);
+            if (!string.IsNullOrEmpty(msg))
+            {
+                MessageBox.Show(msg);
+                return false;
+            }
 
             data.Id = crSelectedEx.Id;
             data.IdSung = crSelectedEx.IdSung;
@@ -584,7 +616,6 @@ namespace PBDT_2D.Forms
         }
 
         #endregion
-
 
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace TBA2D.Forms.UserControls
+﻿namespace PBDT_2D.Forms.UserControls
 {
     partial class VS_DieuKienBB
     {
@@ -28,328 +28,354 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbSoDan = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cbCountHit = new System.Windows.Forms.CheckBox();
-            this.cbCountFirstHit = new System.Windows.Forms.CheckBox();
-            this.cbBulletRemains = new System.Windows.Forms.CheckBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbDiemDat = new System.Windows.Forms.TextBox();
-            this.tbDiemKha = new System.Windows.Forms.TextBox();
-            this.tbDiemGioi = new System.Windows.Forms.TextBox();
-            this.tbCountHit_Dat = new System.Windows.Forms.TextBox();
-            this.tbCountHit_Kha = new System.Windows.Forms.TextBox();
-            this.tbCountHit_Gioi = new System.Windows.Forms.TextBox();
-            this.tbFirstHit_Dat = new System.Windows.Forms.TextBox();
-            this.tbFirstHit_Kha = new System.Windows.Forms.TextBox();
-            this.tbFirstHit_Gioi = new System.Windows.Forms.TextBox();
-            this.cbBulletRemain_Dat = new System.Windows.Forms.CheckBox();
-            this.cbBulletRemain_Kha = new System.Windows.Forms.CheckBox();
-            this.cbBulletRemain_Gioi = new System.Windows.Forms.CheckBox();
-            this.cbDrawHitPoint = new System.Windows.Forms.CheckBox();
-            this.groupBox1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.SuspendLayout();
+            groupBox1 = new GroupBox();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            label1 = new Label();
+            tbSoDan = new TextBox();
+            label5 = new Label();
+            cbCountHit = new CheckBox();
+            cbCountFirstHit = new CheckBox();
+            cbBulletRemains = new CheckBox();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            tbDiemDat = new TextBox();
+            tbDiemKha = new TextBox();
+            tbDiemGioi = new TextBox();
+            tbCountHit_Dat = new TextBox();
+            tbCountHit_Kha = new TextBox();
+            tbCountHit_Gioi = new TextBox();
+            tbFirstHit_Dat = new TextBox();
+            tbFirstHit_Kha = new TextBox();
+            tbFirstHit_Gioi = new TextBox();
+            cbBulletRemain_Dat = new CheckBox();
+            cbBulletRemain_Kha = new CheckBox();
+            cbBulletRemain_Gioi = new CheckBox();
+            cbDrawHitPoint = new CheckBox();
+            groupBox1.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
+            SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.tableLayoutPanel1);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(539, 192);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Tính điểm";
+            groupBox1.Controls.Add(tableLayoutPanel1);
+            groupBox1.Dock = DockStyle.Fill;
+            groupBox1.Location = new Point(0, 0);
+            groupBox1.Margin = new Padding(4, 3, 4, 3);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(4, 3, 4, 3);
+            groupBox1.Size = new Size(629, 222);
+            groupBox1.TabIndex = 0;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Tính điểm";
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tbSoDan, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.cbCountHit, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.cbCountFirstHit, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.cbBulletRemains, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.tbDiemDat, 4, 2);
-            this.tableLayoutPanel1.Controls.Add(this.tbDiemKha, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.tbDiemGioi, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.tbCountHit_Dat, 4, 3);
-            this.tableLayoutPanel1.Controls.Add(this.tbCountHit_Kha, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.tbCountHit_Gioi, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.tbFirstHit_Dat, 4, 4);
-            this.tableLayoutPanel1.Controls.Add(this.tbFirstHit_Kha, 3, 4);
-            this.tableLayoutPanel1.Controls.Add(this.tbFirstHit_Gioi, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.cbBulletRemain_Dat, 4, 5);
-            this.tableLayoutPanel1.Controls.Add(this.cbBulletRemain_Kha, 3, 5);
-            this.tableLayoutPanel1.Controls.Add(this.cbBulletRemain_Gioi, 2, 5);
-            this.tableLayoutPanel1.Controls.Add(this.cbDrawHitPoint, 3, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 16);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(533, 173);
-            this.tableLayoutPanel1.TabIndex = 0;
+            tableLayoutPanel1.ColumnCount = 5;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.Controls.Add(label1, 0, 0);
+            tableLayoutPanel1.Controls.Add(tbSoDan, 1, 0);
+            tableLayoutPanel1.Controls.Add(label5, 0, 2);
+            tableLayoutPanel1.Controls.Add(cbCountHit, 0, 3);
+            tableLayoutPanel1.Controls.Add(cbCountFirstHit, 0, 4);
+            tableLayoutPanel1.Controls.Add(cbBulletRemains, 0, 5);
+            tableLayoutPanel1.Controls.Add(label4, 4, 1);
+            tableLayoutPanel1.Controls.Add(label3, 3, 1);
+            tableLayoutPanel1.Controls.Add(label2, 2, 1);
+            tableLayoutPanel1.Controls.Add(tbDiemDat, 4, 2);
+            tableLayoutPanel1.Controls.Add(tbDiemKha, 3, 2);
+            tableLayoutPanel1.Controls.Add(tbDiemGioi, 2, 2);
+            tableLayoutPanel1.Controls.Add(tbCountHit_Dat, 4, 3);
+            tableLayoutPanel1.Controls.Add(tbCountHit_Kha, 3, 3);
+            tableLayoutPanel1.Controls.Add(tbCountHit_Gioi, 2, 3);
+            tableLayoutPanel1.Controls.Add(tbFirstHit_Dat, 4, 4);
+            tableLayoutPanel1.Controls.Add(tbFirstHit_Kha, 3, 4);
+            tableLayoutPanel1.Controls.Add(tbFirstHit_Gioi, 2, 4);
+            tableLayoutPanel1.Controls.Add(cbBulletRemain_Dat, 4, 5);
+            tableLayoutPanel1.Controls.Add(cbBulletRemain_Kha, 3, 5);
+            tableLayoutPanel1.Controls.Add(cbBulletRemain_Gioi, 2, 5);
+            tableLayoutPanel1.Controls.Add(cbDrawHitPoint, 3, 0);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(4, 19);
+            tableLayoutPanel1.Margin = new Padding(4, 3, 4, 3);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 6;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.66667F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.66667F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.66667F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.66667F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.66667F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.66667F));
+            tableLayoutPanel1.Size = new Size(621, 200);
+            tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 28);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Số đạn";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            label1.AutoSize = true;
+            label1.Dock = DockStyle.Fill;
+            label1.Location = new Point(4, 0);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(116, 33);
+            label1.TabIndex = 0;
+            label1.Text = "Số đạn";
+            label1.TextAlign = ContentAlignment.MiddleRight;
             // 
             // tbSoDan
             // 
-            this.tbSoDan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbSoDan.Location = new System.Drawing.Point(109, 3);
-            this.tbSoDan.Name = "tbSoDan";
-            this.tbSoDan.Size = new System.Drawing.Size(100, 20);
-            this.tbSoDan.TabIndex = 7;
+            tbSoDan.Dock = DockStyle.Fill;
+            tbSoDan.Location = new Point(128, 3);
+            tbSoDan.Margin = new Padding(4, 3, 4, 3);
+            tbSoDan.Name = "tbSoDan";
+            tbSoDan.Size = new Size(116, 23);
+            tbSoDan.TabIndex = 7;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.label5, 2);
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Location = new System.Drawing.Point(3, 56);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(206, 28);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Điểm / Trúng mục tiêu";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            label5.AutoSize = true;
+            tableLayoutPanel1.SetColumnSpan(label5, 2);
+            label5.Dock = DockStyle.Fill;
+            label5.Location = new Point(4, 66);
+            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(240, 33);
+            label5.TabIndex = 17;
+            label5.Text = "Điểm / Trúng mục tiêu";
+            label5.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // cbCountHit
             // 
-            this.cbCountHit.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.cbCountHit, 2);
-            this.cbCountHit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbCountHit.Location = new System.Drawing.Point(3, 87);
-            this.cbCountHit.Name = "cbCountHit";
-            this.cbCountHit.Size = new System.Drawing.Size(206, 22);
-            this.cbCountHit.TabIndex = 8;
-            this.cbCountHit.Text = "Tính số viên trúng mục tiêu";
-            this.cbCountHit.UseVisualStyleBackColor = true;
-            this.cbCountHit.CheckedChanged += new System.EventHandler(this.cbCountHit_CheckedChanged);
+            cbCountHit.AutoSize = true;
+            tableLayoutPanel1.SetColumnSpan(cbCountHit, 2);
+            cbCountHit.Dock = DockStyle.Fill;
+            cbCountHit.Location = new Point(4, 102);
+            cbCountHit.Margin = new Padding(4, 3, 4, 3);
+            cbCountHit.Name = "cbCountHit";
+            cbCountHit.Size = new Size(240, 27);
+            cbCountHit.TabIndex = 8;
+            cbCountHit.Text = "Tính số viên trúng mục tiêu";
+            cbCountHit.UseVisualStyleBackColor = true;
+            cbCountHit.CheckedChanged += cbCountHit_CheckedChanged;
             // 
             // cbCountFirstHit
             // 
-            this.cbCountFirstHit.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.cbCountFirstHit, 2);
-            this.cbCountFirstHit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbCountFirstHit.Location = new System.Drawing.Point(3, 115);
-            this.cbCountFirstHit.Name = "cbCountFirstHit";
-            this.cbCountFirstHit.Size = new System.Drawing.Size(206, 22);
-            this.cbCountFirstHit.TabIndex = 12;
-            this.cbCountFirstHit.Text = "Tính thứ tự viên trúng đầu tiên";
-            this.cbCountFirstHit.UseVisualStyleBackColor = true;
-            this.cbCountFirstHit.CheckedChanged += new System.EventHandler(this.cbCountFirstHit_CheckedChanged);
+            cbCountFirstHit.AutoSize = true;
+            tableLayoutPanel1.SetColumnSpan(cbCountFirstHit, 2);
+            cbCountFirstHit.Dock = DockStyle.Fill;
+            cbCountFirstHit.Location = new Point(4, 135);
+            cbCountFirstHit.Margin = new Padding(4, 3, 4, 3);
+            cbCountFirstHit.Name = "cbCountFirstHit";
+            cbCountFirstHit.Size = new Size(240, 27);
+            cbCountFirstHit.TabIndex = 12;
+            cbCountFirstHit.Text = "Tính thứ tự viên trúng đầu tiên";
+            cbCountFirstHit.UseVisualStyleBackColor = true;
+            cbCountFirstHit.CheckedChanged += cbCountFirstHit_CheckedChanged;
             // 
             // cbBulletRemains
             // 
-            this.cbBulletRemains.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.cbBulletRemains, 2);
-            this.cbBulletRemains.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbBulletRemains.Location = new System.Drawing.Point(3, 143);
-            this.cbBulletRemains.Name = "cbBulletRemains";
-            this.cbBulletRemains.Size = new System.Drawing.Size(206, 27);
-            this.cbBulletRemains.TabIndex = 16;
-            this.cbBulletRemains.Text = "Còn thừa đạn";
-            this.cbBulletRemains.UseVisualStyleBackColor = true;
-            this.cbBulletRemains.CheckedChanged += new System.EventHandler(this.cbBulletRemains_CheckedChanged);
+            cbBulletRemains.AutoSize = true;
+            tableLayoutPanel1.SetColumnSpan(cbBulletRemains, 2);
+            cbBulletRemains.Dock = DockStyle.Fill;
+            cbBulletRemains.Location = new Point(4, 168);
+            cbBulletRemains.Margin = new Padding(4, 3, 4, 3);
+            cbBulletRemains.Name = "cbBulletRemains";
+            cbBulletRemains.Size = new Size(240, 29);
+            cbBulletRemains.TabIndex = 16;
+            cbBulletRemains.Text = "Còn thừa đạn";
+            cbBulletRemains.UseVisualStyleBackColor = true;
+            cbBulletRemains.CheckedChanged += cbBulletRemains_CheckedChanged;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(427, 28);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 28);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Điểm đạt";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label4.AutoSize = true;
+            label4.Dock = DockStyle.Fill;
+            label4.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(500, 33);
+            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(117, 33);
+            label4.TabIndex = 3;
+            label4.Text = "Điểm đạt";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(321, 28);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 28);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Điểm khá";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label3.AutoSize = true;
+            label3.Dock = DockStyle.Fill;
+            label3.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(376, 33);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(116, 33);
+            label3.TabIndex = 2;
+            label3.Text = "Điểm khá";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(215, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 28);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Điểm giỏi";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label2.AutoSize = true;
+            label2.Dock = DockStyle.Fill;
+            label2.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(252, 33);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(116, 33);
+            label2.TabIndex = 1;
+            label2.Text = "Điểm giỏi";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tbDiemDat
             // 
-            this.tbDiemDat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbDiemDat.Location = new System.Drawing.Point(427, 59);
-            this.tbDiemDat.Name = "tbDiemDat";
-            this.tbDiemDat.Size = new System.Drawing.Size(103, 20);
-            this.tbDiemDat.TabIndex = 6;
+            tbDiemDat.Dock = DockStyle.Fill;
+            tbDiemDat.Location = new Point(500, 69);
+            tbDiemDat.Margin = new Padding(4, 3, 4, 3);
+            tbDiemDat.Name = "tbDiemDat";
+            tbDiemDat.Size = new Size(117, 23);
+            tbDiemDat.TabIndex = 6;
             // 
             // tbDiemKha
             // 
-            this.tbDiemKha.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbDiemKha.Location = new System.Drawing.Point(321, 59);
-            this.tbDiemKha.Name = "tbDiemKha";
-            this.tbDiemKha.Size = new System.Drawing.Size(100, 20);
-            this.tbDiemKha.TabIndex = 5;
+            tbDiemKha.Dock = DockStyle.Fill;
+            tbDiemKha.Location = new Point(376, 69);
+            tbDiemKha.Margin = new Padding(4, 3, 4, 3);
+            tbDiemKha.Name = "tbDiemKha";
+            tbDiemKha.Size = new Size(116, 23);
+            tbDiemKha.TabIndex = 5;
             // 
             // tbDiemGioi
             // 
-            this.tbDiemGioi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbDiemGioi.Location = new System.Drawing.Point(215, 59);
-            this.tbDiemGioi.Name = "tbDiemGioi";
-            this.tbDiemGioi.Size = new System.Drawing.Size(100, 20);
-            this.tbDiemGioi.TabIndex = 4;
+            tbDiemGioi.Dock = DockStyle.Fill;
+            tbDiemGioi.Location = new Point(252, 69);
+            tbDiemGioi.Margin = new Padding(4, 3, 4, 3);
+            tbDiemGioi.Name = "tbDiemGioi";
+            tbDiemGioi.Size = new Size(116, 23);
+            tbDiemGioi.TabIndex = 4;
             // 
             // tbCountHit_Dat
             // 
-            this.tbCountHit_Dat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbCountHit_Dat.Enabled = false;
-            this.tbCountHit_Dat.Location = new System.Drawing.Point(427, 87);
-            this.tbCountHit_Dat.Name = "tbCountHit_Dat";
-            this.tbCountHit_Dat.Size = new System.Drawing.Size(103, 20);
-            this.tbCountHit_Dat.TabIndex = 11;
+            tbCountHit_Dat.Dock = DockStyle.Fill;
+            tbCountHit_Dat.Enabled = false;
+            tbCountHit_Dat.Location = new Point(500, 102);
+            tbCountHit_Dat.Margin = new Padding(4, 3, 4, 3);
+            tbCountHit_Dat.Name = "tbCountHit_Dat";
+            tbCountHit_Dat.Size = new Size(117, 23);
+            tbCountHit_Dat.TabIndex = 11;
             // 
             // tbCountHit_Kha
             // 
-            this.tbCountHit_Kha.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbCountHit_Kha.Enabled = false;
-            this.tbCountHit_Kha.Location = new System.Drawing.Point(321, 87);
-            this.tbCountHit_Kha.Name = "tbCountHit_Kha";
-            this.tbCountHit_Kha.Size = new System.Drawing.Size(100, 20);
-            this.tbCountHit_Kha.TabIndex = 10;
+            tbCountHit_Kha.Dock = DockStyle.Fill;
+            tbCountHit_Kha.Enabled = false;
+            tbCountHit_Kha.Location = new Point(376, 102);
+            tbCountHit_Kha.Margin = new Padding(4, 3, 4, 3);
+            tbCountHit_Kha.Name = "tbCountHit_Kha";
+            tbCountHit_Kha.Size = new Size(116, 23);
+            tbCountHit_Kha.TabIndex = 10;
             // 
             // tbCountHit_Gioi
             // 
-            this.tbCountHit_Gioi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbCountHit_Gioi.Enabled = false;
-            this.tbCountHit_Gioi.Location = new System.Drawing.Point(215, 87);
-            this.tbCountHit_Gioi.Name = "tbCountHit_Gioi";
-            this.tbCountHit_Gioi.Size = new System.Drawing.Size(100, 20);
-            this.tbCountHit_Gioi.TabIndex = 9;
+            tbCountHit_Gioi.Dock = DockStyle.Fill;
+            tbCountHit_Gioi.Enabled = false;
+            tbCountHit_Gioi.Location = new Point(252, 102);
+            tbCountHit_Gioi.Margin = new Padding(4, 3, 4, 3);
+            tbCountHit_Gioi.Name = "tbCountHit_Gioi";
+            tbCountHit_Gioi.Size = new Size(116, 23);
+            tbCountHit_Gioi.TabIndex = 9;
             // 
             // tbFirstHit_Dat
             // 
-            this.tbFirstHit_Dat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbFirstHit_Dat.Enabled = false;
-            this.tbFirstHit_Dat.Location = new System.Drawing.Point(427, 115);
-            this.tbFirstHit_Dat.Name = "tbFirstHit_Dat";
-            this.tbFirstHit_Dat.Size = new System.Drawing.Size(103, 20);
-            this.tbFirstHit_Dat.TabIndex = 15;
+            tbFirstHit_Dat.Dock = DockStyle.Fill;
+            tbFirstHit_Dat.Enabled = false;
+            tbFirstHit_Dat.Location = new Point(500, 135);
+            tbFirstHit_Dat.Margin = new Padding(4, 3, 4, 3);
+            tbFirstHit_Dat.Name = "tbFirstHit_Dat";
+            tbFirstHit_Dat.Size = new Size(117, 23);
+            tbFirstHit_Dat.TabIndex = 15;
             // 
             // tbFirstHit_Kha
             // 
-            this.tbFirstHit_Kha.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbFirstHit_Kha.Enabled = false;
-            this.tbFirstHit_Kha.Location = new System.Drawing.Point(321, 115);
-            this.tbFirstHit_Kha.Name = "tbFirstHit_Kha";
-            this.tbFirstHit_Kha.Size = new System.Drawing.Size(100, 20);
-            this.tbFirstHit_Kha.TabIndex = 14;
+            tbFirstHit_Kha.Dock = DockStyle.Fill;
+            tbFirstHit_Kha.Enabled = false;
+            tbFirstHit_Kha.Location = new Point(376, 135);
+            tbFirstHit_Kha.Margin = new Padding(4, 3, 4, 3);
+            tbFirstHit_Kha.Name = "tbFirstHit_Kha";
+            tbFirstHit_Kha.Size = new Size(116, 23);
+            tbFirstHit_Kha.TabIndex = 14;
             // 
             // tbFirstHit_Gioi
             // 
-            this.tbFirstHit_Gioi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbFirstHit_Gioi.Enabled = false;
-            this.tbFirstHit_Gioi.Location = new System.Drawing.Point(215, 115);
-            this.tbFirstHit_Gioi.Name = "tbFirstHit_Gioi";
-            this.tbFirstHit_Gioi.Size = new System.Drawing.Size(100, 20);
-            this.tbFirstHit_Gioi.TabIndex = 13;
+            tbFirstHit_Gioi.Dock = DockStyle.Fill;
+            tbFirstHit_Gioi.Enabled = false;
+            tbFirstHit_Gioi.Location = new Point(252, 135);
+            tbFirstHit_Gioi.Margin = new Padding(4, 3, 4, 3);
+            tbFirstHit_Gioi.Name = "tbFirstHit_Gioi";
+            tbFirstHit_Gioi.Size = new Size(116, 23);
+            tbFirstHit_Gioi.TabIndex = 13;
             // 
             // cbBulletRemain_Dat
             // 
-            this.cbBulletRemain_Dat.AutoSize = true;
-            this.cbBulletRemain_Dat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbBulletRemain_Dat.Location = new System.Drawing.Point(427, 143);
-            this.cbBulletRemain_Dat.Name = "cbBulletRemain_Dat";
-            this.cbBulletRemain_Dat.Size = new System.Drawing.Size(103, 27);
-            this.cbBulletRemain_Dat.TabIndex = 20;
-            this.cbBulletRemain_Dat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.cbBulletRemain_Dat.UseVisualStyleBackColor = true;
+            cbBulletRemain_Dat.AutoSize = true;
+            cbBulletRemain_Dat.Dock = DockStyle.Fill;
+            cbBulletRemain_Dat.Location = new Point(500, 168);
+            cbBulletRemain_Dat.Margin = new Padding(4, 3, 4, 3);
+            cbBulletRemain_Dat.Name = "cbBulletRemain_Dat";
+            cbBulletRemain_Dat.Size = new Size(117, 29);
+            cbBulletRemain_Dat.TabIndex = 20;
+            cbBulletRemain_Dat.TextAlign = ContentAlignment.MiddleCenter;
+            cbBulletRemain_Dat.UseVisualStyleBackColor = true;
             // 
             // cbBulletRemain_Kha
             // 
-            this.cbBulletRemain_Kha.AutoSize = true;
-            this.cbBulletRemain_Kha.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbBulletRemain_Kha.Location = new System.Drawing.Point(321, 143);
-            this.cbBulletRemain_Kha.Name = "cbBulletRemain_Kha";
-            this.cbBulletRemain_Kha.Size = new System.Drawing.Size(100, 27);
-            this.cbBulletRemain_Kha.TabIndex = 19;
-            this.cbBulletRemain_Kha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.cbBulletRemain_Kha.UseVisualStyleBackColor = true;
+            cbBulletRemain_Kha.AutoSize = true;
+            cbBulletRemain_Kha.Dock = DockStyle.Fill;
+            cbBulletRemain_Kha.Location = new Point(376, 168);
+            cbBulletRemain_Kha.Margin = new Padding(4, 3, 4, 3);
+            cbBulletRemain_Kha.Name = "cbBulletRemain_Kha";
+            cbBulletRemain_Kha.Size = new Size(116, 29);
+            cbBulletRemain_Kha.TabIndex = 19;
+            cbBulletRemain_Kha.TextAlign = ContentAlignment.MiddleCenter;
+            cbBulletRemain_Kha.UseVisualStyleBackColor = true;
             // 
             // cbBulletRemain_Gioi
             // 
-            this.cbBulletRemain_Gioi.AutoSize = true;
-            this.cbBulletRemain_Gioi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbBulletRemain_Gioi.Location = new System.Drawing.Point(215, 143);
-            this.cbBulletRemain_Gioi.Name = "cbBulletRemain_Gioi";
-            this.cbBulletRemain_Gioi.Size = new System.Drawing.Size(100, 27);
-            this.cbBulletRemain_Gioi.TabIndex = 18;
-            this.cbBulletRemain_Gioi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.cbBulletRemain_Gioi.UseVisualStyleBackColor = true;
+            cbBulletRemain_Gioi.AutoSize = true;
+            cbBulletRemain_Gioi.Dock = DockStyle.Fill;
+            cbBulletRemain_Gioi.Location = new Point(252, 168);
+            cbBulletRemain_Gioi.Margin = new Padding(4, 3, 4, 3);
+            cbBulletRemain_Gioi.Name = "cbBulletRemain_Gioi";
+            cbBulletRemain_Gioi.Size = new Size(116, 29);
+            cbBulletRemain_Gioi.TabIndex = 18;
+            cbBulletRemain_Gioi.TextAlign = ContentAlignment.MiddleCenter;
+            cbBulletRemain_Gioi.UseVisualStyleBackColor = true;
             // 
             // cbDrawHitPoint
             // 
-            this.cbDrawHitPoint.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.cbDrawHitPoint, 2);
-            this.cbDrawHitPoint.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbDrawHitPoint.Location = new System.Drawing.Point(321, 3);
-            this.cbDrawHitPoint.Name = "cbDrawHitPoint";
-            this.cbDrawHitPoint.Size = new System.Drawing.Size(209, 22);
-            this.cbDrawHitPoint.TabIndex = 21;
-            this.cbDrawHitPoint.Text = "Vẽ điểm chạm";
-            this.cbDrawHitPoint.UseVisualStyleBackColor = true;
+            cbDrawHitPoint.AutoSize = true;
+            tableLayoutPanel1.SetColumnSpan(cbDrawHitPoint, 2);
+            cbDrawHitPoint.Dock = DockStyle.Fill;
+            cbDrawHitPoint.Location = new Point(376, 3);
+            cbDrawHitPoint.Margin = new Padding(4, 3, 4, 3);
+            cbDrawHitPoint.Name = "cbDrawHitPoint";
+            cbDrawHitPoint.Size = new Size(241, 27);
+            cbDrawHitPoint.TabIndex = 21;
+            cbDrawHitPoint.Text = "Vẽ điểm chạm";
+            cbDrawHitPoint.UseVisualStyleBackColor = true;
             // 
             // VS_DieuKienBB
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupBox1);
-            this.Name = "VS_DieuKienBB";
-            this.Size = new System.Drawing.Size(539, 192);
-            this.groupBox1.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(groupBox1);
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "VS_DieuKienBB";
+            Size = new Size(629, 222);
+            groupBox1.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
+            ResumeLayout(false);
 
         }
 

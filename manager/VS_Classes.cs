@@ -115,7 +115,13 @@ namespace PBDT_2D.Manager
         public bool hasError;
 
         public List<VS_User> crewSetup;
-        
+        public static class SelectedDataStore
+        {
+            public static List<int> HocVienIds { get; set; }
+            public static List<int> GiaoVuIds { get; set; }
+        }
+
+
         public VS_HABBFormData(string tenBB, VS_Baiban dataBaiBan, List<VS_User> dataCrewSetup)
         {
             try

@@ -479,6 +479,68 @@ namespace PBDT_2D.Manager
         }
 
         //CREW
+
+        public static (DataTable hocVienTable, DataTable giaoVuTable) LoadSelectedUsers(List<int> hvIds, List<int> gvIds)
+        {
+            var hvTable = new DataTable();
+            var gvTable = new DataTable();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(VS_Database.dbConnection))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("sp_LayDanhSachChon", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@ListHV", string.Join(",", hvIds));
+                        cmd.Parameters.AddWithValue("@ListGV", string.Join(",", gvIds));
+
+                        using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                        {
+                            var ds = new DataSet();
+                            da.Fill(ds);
+
+                            if (ds.Tables.Count > 0)
+                                hvTable = ds.Tables[0];
+                            if (ds.Tables.Count > 1)
+                                gvTable = ds.Tables[1];
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi truy xuất dữ liệu: " + ex.Message);
+            }
+
+            return (hvTable, gvTable);
+        }
+
+
+
+        public static void SaveSelectedUsers(List<int> hvIds, List<int> gvIds)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(VS_Database.dbConnection))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("sp_LuuDanhSachChon", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@ListHV", string.Join(",", hvIds));
+                        cmd.Parameters.AddWithValue("@ListGV", string.Join(",", gvIds));
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi lưu dữ liệu: " + ex.Message);
+            }
+        }
+
         public static List<VS_KipBan> LoadDSKipBan(VS_SearchConditions conds)
         {
             var result = new List<VS_KipBan>();

@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static PBDT_2D.Manager.VS_HABBFormData;
 
 namespace PBDT_2D
 {
@@ -113,6 +114,11 @@ namespace PBDT_2D
                 result.ChucVu = grdUsersList.SelectedRows[0].Cells["userList_ChucVu"].Value.ToString();
                 result.DonVi = grdUsersList.SelectedRows[0].Cells["userList_DonVi"].Value.ToString();
                 result.GhiChu = grdUsersList.SelectedRows[0].Cells["userList_GhiChu"].Value.ToString();
+                var cellValue = grdUsersList.SelectedRows[0].Cells["userList_NamSinh"].Value;
+                if (cellValue != null && int.TryParse(cellValue.ToString(), out int namSinh))
+                    result.NamSinh = namSinh;
+                else
+                    result.NamSinh = null;
 
                 userList_selectedUser = result;
             }
@@ -156,6 +162,12 @@ namespace PBDT_2D
                 result.ChucVu = grdUsersShooting.SelectedRows[0].Cells["ChucVu"].Value.ToString();
                 result.DonVi = grdUsersShooting.SelectedRows[0].Cells["DonVi"].Value.ToString();
                 result.GhiChu = grdUsersShooting.SelectedRows[0].Cells["GhiChu"].Value.ToString();
+                var cellValue = grdUsersShooting.SelectedRows[0].Cells["NamSinh"].Value;
+                if (cellValue != null && int.TryParse(cellValue.ToString(), out int namSinh))
+                    result.NamSinh = namSinh;
+                else
+                    result.NamSinh = null;
+
 
                 userShootingList_selectedUser = result;
                 userShooting_selectedUserIndex = grdUsersShooting.SelectedRows[0].Index;
@@ -169,16 +181,20 @@ namespace PBDT_2D
 
         void TeacherList_GetSelectedUser()
         {
-            if (grdGiaoVienList.SelectedRows.Count == 1)
+            if (grdTeacher.SelectedRows.Count == 1)
             {
                 var result = new VS_GiaoVu();
 
-                result.Id = int.Parse(grdGiaoVienList.SelectedRows[0].Cells["gvList_Id"].Value.ToString());
-                result.ThuTu = int.Parse(grdGiaoVienList.SelectedRows[0].Cells["gvList_ThuTu"].Value.ToString());
-                result.HoTen = grdGiaoVienList.SelectedRows[0].Cells["gvList_Ten"].Value.ToString();
-                result.QuanHamId = int.Parse(grdGiaoVienList.SelectedRows[0].Cells["gvList_QuanHamId"].Value.ToString());
-                result.QuanHam = grdGiaoVienList.SelectedRows[0].Cells["gvList_QuanHam"].Value.ToString();
-                result.NamSinh = int.Parse(grdGiaoVienList.SelectedRows[0].Cells["gvList_NamSinh"].Value.ToString());
+                result.Id = int.Parse(grdTeacher.SelectedRows[0].Cells["teacher_Id"].Value.ToString());
+                result.ThuTu = int.Parse(grdTeacher.SelectedRows[0].Cells["teacher_ThuTu"].Value.ToString());
+                result.HoTen = grdTeacher.SelectedRows[0].Cells["teacher_Ten"].Value.ToString();
+                result.QuanHamId = int.Parse(grdTeacher.SelectedRows[0].Cells["teacher_QuanHamId"].Value.ToString());
+                result.QuanHam = grdTeacher.SelectedRows[0].Cells["teacher_QuanHam"].Value.ToString();
+                var cellValue = grdTeacher.SelectedRows[0].Cells["teacher_NamSinh"].Value;
+                if (cellValue != null && int.TryParse(cellValue.ToString(), out int namSinh))
+                    result.NamSinh = namSinh;
+                else
+                    result.NamSinh = null;
 
                 Debug.WriteLine($"[Teacher] STT: {result.ThuTu}, Id: {result.Id} QHId: {result.QuanHamId}, HoTen: {result.HoTen}, NamSinh: {result.NamSinh}, QuanHam: {result.QuanHam}");
 
@@ -245,6 +261,18 @@ namespace PBDT_2D
             grdTeacher.Refresh();
         }
 
+        string SerializeShootingSetupToIdString()
+        {
+            List<VS_User> foo = (List<VS_User>)grdUsersShooting.DataSource;
+            List<VS_GiaoVu> foo2 = (List<VS_GiaoVu>)grdTeacher.DataSource;
+
+            var str = string.Join(",", foo.Select(u => u.Id).ToList());
+            str = str + "|" + (teacherList_selectedUser != null ? teacherList_selectedUser.Id : 0);
+
+            return str;
+        }
+
+
         void UserShooting_SwapRows(int fromIndex, int changeTo)
         {
             List<VS_User> foo = (List<VS_User>)grdUsersShooting.DataSource;
@@ -258,104 +286,6 @@ namespace PBDT_2D
 
             grdUsersShooting.Rows[changeTo].Selected = true;
         }
-
-        // Lưu session học viên
-        void SaveShootingSessionHV()
-        {
-            var foo = (List<VS_User>)grdUsersShooting.DataSource;
-            string str = string.Join(",", foo.Select(u => u.Id).ToList());
-
-            Properties.Settings.Default.LastShootingSession_HV = str;
-            Properties.Settings.Default.Save();
-        }
-
-        // Lưu session giáo vụ
-        void SaveShootingSessionGV()
-        {
-            var foo2 = (List<VS_GiaoVu>)grdTeacher.DataSource;
-            int teacherId = teacherList_selectedUser != null ? teacherList_selectedUser.Id : 0;
-
-            Properties.Settings.Default.LastShootingSession_GV = teacherId.ToString();
-            Properties.Settings.Default.Save();
-        }
-        void LoadShootingSessionHV()
-        {
-            string str = Properties.Settings.Default.LastShootingSession_HV;
-            var lstResult = new List<VS_User>();
-
-            // Nếu có dữ liệu đã lưu
-            if (!string.IsNullOrEmpty(str))
-            {
-                var ids = str.Split(',')
-                             .Where(x => !string.IsNullOrWhiteSpace(x))
-                             .Select(int.Parse)
-                             .ToList();
-
-                if (ids.Count > 0)
-                {
-                    // Lấy toàn bộ HV từ DB
-                    var lstAllUsers = VS_DBManager.LoadAllUsers("", 0, "", "", "", null);
-
-                    // Duyệt qua 9 slot
-                    for (int i = 0; i < 9; i++)
-                    {
-                        if (i < ids.Count)
-                        {
-                            // Nếu Id hợp lệ -> lấy user từ DB
-                            var user = lstAllUsers.FirstOrDefault(u => u.Id == ids[i]);
-                            lstResult.Add(user ?? new VS_User());
-                        }
-                        else
-                        {
-                            // Nếu không có id -> slot trống
-                            lstResult.Add(new VS_User());
-                        }
-                    }
-                }
-            }
-
-            // Nếu chưa có dữ liệu -> tạo 9 slot trống
-            if (lstResult.Count == 0)
-            {
-                for (int i = 0; i < 9; i++)
-                {
-                    lstResult.Add(new VS_User());
-                }
-            }
-
-            grdUsersShooting.AutoGenerateColumns = false;
-            grdUsersShooting.DataSource = lstResult;
-        }
-
-
-
-        void LoadShootingSessionGV()
-        {
-            string str = Properties.Settings.Default.LastShootingSession_GV;
-            if (string.IsNullOrEmpty(str)) return;
-
-            int teacherId = int.Parse(str);
-
-            // Lấy toàn bộ danh sách GV
-            var lstAllTeachers = VS_DBManager.LoadAllGiaoVu(0, "", null);
-
-            // Tìm lại GV đã lưu
-            var selectedTeacher = lstAllTeachers.FirstOrDefault(t => t.Id == teacherId);
-
-            if (selectedTeacher != null)
-            {
-                // Bind lại cho Grid
-                grdTeacher.AutoGenerateColumns = false;
-                grdTeacher.DataSource = new List<VS_GiaoVu> { selectedTeacher };
-
-                // Gán lại biến selectedUser
-                teacherList_selectedUser = selectedTeacher;
-            }
-        }
-
-
-
-
 
         //List<VS_User> GetShootingSetupList()
         //{
@@ -385,6 +315,7 @@ namespace PBDT_2D
                 var teacherId = int.Parse(arr[1]);
 
                 var userList = (List<VS_User>)grdUsersList.DataSource;
+                var giaoVienList = (List<VS_GiaoVu>)grdGiaoVienList.DataSource;
 
                 //users
                 var foo = new List<VS_User>();
@@ -398,9 +329,9 @@ namespace PBDT_2D
                 grdUsersShooting.Refresh();
 
                 //teacher
-                var foo2 = new List<VS_User>();
-                var teacher = userList.FirstOrDefault(u => u.Id == teacherId);
-                foo2.Add(teacher == null ? new VS_User() : teacher);
+                var foo2 = new List<VS_GiaoVu>();
+                var teacher = giaoVienList.FirstOrDefault(u => u.Id == teacherId);
+                foo2.Add(teacher == null ? new VS_GiaoVu() : teacher);
 
                 grdTeacher.DataSource = foo2;
                 grdTeacher.Refresh();
@@ -408,6 +339,8 @@ namespace PBDT_2D
         }
 
         #region Events
+
+        public event Action<string> OnSetupSaved;
 
         //when close form
         private void VS_CrewSetup_FormClosed(object sender, FormClosedEventArgs e)
@@ -417,13 +350,7 @@ namespace PBDT_2D
                 VS_Main mf = (VS_Main)Application.OpenForms["VS_Main"];
                 mf.EndPreviewBB();
             }
-            SaveShootingSessionHV();
-            SaveShootingSessionGV();
-        }
-        private void VS_CrewSetup_Load(object sender, EventArgs e)
-        {
-            LoadShootingSessionHV();
-            LoadShootingSessionGV();
+
         }
 
 
@@ -555,7 +482,7 @@ namespace PBDT_2D
                 UserShooting_SwapRows(userShooting_selectedUserIndex, userShooting_selectedUserIndex + 1);
         }
 
-        
+
 
         private void btnResetFilterHv_Click(object sender, EventArgs e)
         {
@@ -575,6 +502,88 @@ namespace PBDT_2D
             tbFilterNamSinhGv.Text = string.Empty;
 
         }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var folderPath = string.Format("{0}\\{1}", Path.GetDirectoryName(Application.ExecutablePath), VS_Helper.DefaultCrewSetupFileFolder);
+                if (!Directory.Exists(folderPath))
+                    Directory.CreateDirectory(folderPath);
+
+                var ofd = new OpenFileDialog() { InitialDirectory = folderPath };
+                ofd.Title = "Chọn file cài đặt kíp bắn";
+                ofd.Filter = "All files (*.*) | *.setup";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    string fileName = ofd.FileName;
+                    string extesion = Path.GetExtension(fileName);
+                    switch (extesion)
+                    {
+                        case ".setup":
+                            var content = VS_Helper.ReadFileContent(fileName);
+                            ParseSetupToShootingList(content);
+                            break;
+                        default:
+                            MessageBox.Show("Đuôi file mở không đúng định dạng");
+                            break;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Đọc thiết lập kíp bắn lỗi");
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            SelectedDataStore.HocVienIds = grdUsersShooting.Rows
+            .Cast<DataGridViewRow>()
+            .Where(r => r.Cells["Id"].Value != null)   // tránh null
+            .Select(r => Convert.ToInt32(r.Cells["Id"].Value))
+            .ToList();
+
+            SelectedDataStore.GiaoVuIds = grdTeacher.SelectedRows
+                    .Cast<DataGridViewRow>()
+                    .Select(r => (int)r.Cells["teacher_Id"].Value)
+                    .ToList();
+
+            this.Close(); // Quay về Form Main
+
+
+            //try
+            //{
+            //    var folderPath = string.Format("{0}\\{1}", Path.GetDirectoryName(Application.ExecutablePath), VS_Helper.DefaultCrewSetupFileFolder);
+            //    if (!Directory.Exists(folderPath))
+            //        Directory.CreateDirectory(folderPath);
+
+            //    var sfd = new SaveFileDialog() { InitialDirectory = folderPath };
+            //    sfd.Title = "Lưu thiết lập kíp bắn ra file";
+            //    sfd.Filter = "All files (*.*) | *.setup";
+            //    if (sfd.ShowDialog() == DialogResult.OK)
+            //    {
+            //        string fileName = sfd.FileName;
+            //        string extesion = Path.GetExtension(fileName);
+            //        switch (extesion)
+            //        {
+            //            case ".setup":
+            //                VS_Helper.WriteContentToFile(fileName, SerializeShootingSetupToIdString());
+            //                OnSetupSaved?.Invoke(fileName);
+            //                break;
+            //            default:
+            //                MessageBox.Show("Đuôi file lưu không đúng định dạng");
+            //                break;
+            //        }
+            //    }
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("Lưu thiết lập kíp bắn lỗi");
+            //}
+        }
+
         #endregion
+
     }
 }

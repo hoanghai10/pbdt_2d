@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace TBA2D.Forms.UserControls
+namespace PBDT_2D.Forms.UserControls
 {
     public partial class VS_DieuKienBia : UserControl
     {
